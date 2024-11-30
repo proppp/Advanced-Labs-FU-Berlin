@@ -1,21 +1,101 @@
-\documentclass{dhbenelux}
+\documentclass[12pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[version=4,arrows=pgf-filled,
+textfontname=sffamily,
+mathfontname=mathsf]{mhchem}
+\usepackage[utf8]{inputenc}
+\usepackage{svg}
+\usepackage{lmodern}
+\usepackage{bm}
+\usepackage{gensymb}
+%\usepackage{subcaption}
+\usepackage{amsmath,amssymb}
+\usepackage{braket}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage[english]{babel}
+\usepackage{csquotes}
+\usepackage[document]{ragged2e}
 \usepackage{amsmath}
+\usepackage{tikz, pgfplots}
+\usepackage{romannum}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{positioning}
+\usetikzlibrary{matrix,decorations.pathreplacing, calc, positioning,fit}
+\usetikzlibrary{arrows}
+\usepackage[labelfont=bf]{caption}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{tkz-euclide}
+\usepackage{tikz-cd}
+\usepackage{pgfplots}
+\usepackage{pgf}
+\usepackage{lmodern}
+\usepackage{import}
+\pgfplotsset{width=1cm, compat=1.9}
+\usepackage{tikz,venndiagram}
+\usepackage{subfig}
+\usepackage{centernot}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\usepackage{float}
+\vspace{-5pt}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+\usepackage[sorting=none]{biblatex}
+\addbibresource{bib.bib}
+\AtBeginDocument{\pagenumbering{arabic}}
 
-\usepackage{booktabs} % for toprule, midrule, bottomrule in tables
-\usepackage{authblk} % for multiple authors and affiliations
-\usepackage{graphicx} % to inlcude graphics with \includegraphics
-
-\author[1]{Federico Porcelli}
-\author[2]{Rocky Kamen-Rubio}
-
-\affil[1]{Freie Universitaet Berlin}
-
-\title{Nuclear Magnetic Resonance}
+\usepackage{cleveref}
 
 \begin{document}
+\pagenumbering{gobble}
+\begin{center}
+\huge{Freie Universität Berlin}\\[10pt]
+\huge{Advanced Laboratory Course}\\[50pt]
+\huge{\textbf{Auger and Electron Energy Loss Spectroscopy (Ma10)}}\\[60pt]
+\large{Rocky Kamen-Rubio and Federico Porcelli (Group M9)}\\[30pt]
+\large{Supervisor: Dr. Md Sabbir Ahsan}\\[30pt]
+\large{Experiment conducted on 31.10.2024}\\[30pt]
+\end{center}
 
-\maketitle
+\begin{abstract}
+\justifying Auger electron spectroscopy (AES) and Electron Energy Loss Spectroscopy (EELS) are important surface analysis tools that allow for investigating the electronic structure and chemical composition of material surfaces. These spectroscopic techniques have been applied to investigate solid aluminum. The dataset was collected using a laboratory Auger spectrometer and an EELS analyzer, with lock-in amplification based cylindrical mirror analyzer, enabling the identification of core-level shifts, plasmon excitations, and electronic transitions.
+\end{abstract}
 
+\tableofcontents
+
+\pagenumbering{arabic}
+\section{Introduction}
+\rule{\textwidth}{0.5pt}
+\justifying
+Spectroscopy, specifically Auger electron spectroscopy (AES) and electron energy loss spectroscopy (EELS), are powerful methods for studying the interaction of electrons with the surface of materials. These techniques provide detailed information about surface composition and electronic structure, making them essential in materials science and surface physics. AES relies on the detection of Auger electrons emitted when an atom’s inner-shell electron is ejected, causing a cascade effect where another electron is emitted. The energy of this emitted electron depends on the electronic structure of the atom and can be used to identify the elemental composition of the sample’s surface. The energy of these Auger electrons is characteristic of the element, providing a non-destructive way of identifying the atomic composition of a material’s surface. EELS, on the other hand, measures the energy lost by electrons as they pass through or reflect off a material. This energy loss occurs due to inelastic scattering, where electrons interact with the atoms in the material, revealing information about electronic excitations, such as plasmon resonances and band structure. Together, AES and EELS offer complementary information about the surface properties and electronic behavior of materials.
+
+%% \newpage
+%\subsection{Theoretical background}
+%\documentclass{dhbenelux}
+%\usepackage{amsmath}
+%
+%\usepackage{booktabs} % for toprule, midrule, bottomrule in tables
+%\usepackage{authblk} % for multiple authors and affiliations
+%\usepackage{graphicx} % to inlcude graphics with \includegraphics
+%
+%\author[1]{Federico Porcelli}
+%\author[2]{Rocky Kamen-Rubio}
+%
+%\affil[1]{Freie Universitaet Berlin}
+%
+%\title{Nuclear Magnetic Resonance}
+%
+%\begin{document}
+%
+%\maketitle
+%
 \section{Introduction}
 
 \subsection{What is NMR?}
@@ -226,7 +306,7 @@ $T_2$ &&  &  & \\ \hline
 \label{tab:example_table}
 \end{table}
 
-We begin by lookingg at the FID after applying a $90^o$ pulse, and do the following
+We begin by looking at the FID after applying a $90^o$ pulse, and do the following
 
 \begin{itemize}
     \item \textbf{Pulse Length Adjustment} We maximize the signal intensity by adjusting the length of the applied pulse
