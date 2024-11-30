@@ -8,5 +8,4 @@ For more details about the course, visit the [official course webpage](https://w
 
 ### Repository Structure
 
-This repository is organized into directories for each lab, where we will store relevant data and analysis. The basic structure looks like this:
-
+This repository is organized into directories for each lab, where we will store relevant data and analysis.
