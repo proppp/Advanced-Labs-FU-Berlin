@@ -1,0 +1,12 @@
+
+Header Information for Auger_4keV_full_after cleaning.txt:
+Kommentar: Sen:
+Zeit: 01.11.2024        17:15
+Startenergie: 10
+Endenergie: 1500
+Energieschritt: 2
+Sensitivity: 300 uV
+Fitted Parameters for Range 1 ((53, 120)): A = 55277.84107742064, mu = 70.6126956582784, sigma = 7.378221949071815
+Fitted Parameters for Range 2 ((260, 300)): A = 1428.5413428897177, mu = 272.9550807673161, sigma = 7.374645921882347
+Fitted Parameters for Range 4 ((1372, 1399)): A = 6634.989125044016, mu = 1383.5097084827632, sigma = -6.768037421546189
+Plot saved as PDF: ./Auger_4keV_full_after cleaning.txt_fit_plot.pdf
