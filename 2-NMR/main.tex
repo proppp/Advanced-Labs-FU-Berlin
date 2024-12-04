@@ -366,6 +366,26 @@ Then, the peaks of the $\pi$ pulse were detected for each of the $t$ values (usi
 \]
 where A is again, the amplitude, $T_2$ is the spin-spin relaxation time and c is a shifting factor (irrelevant for our purposes here).
 The resulting fittings can be seen in Figures \ref{Spin_echo_0.05M.pdf}, \ref{Spin_echo_0.1M.pdf} and \ref{Spin_echo_0.2M.pdf}, for the 0.05, 0.1 and 0.2M respectively.
+A trend that is noticeable can be seen by looking at the fitting parameters present in Table \ref{tab:se} - in particular, both $T_2$ and $A$ decrease for increasing concentrations of the $\text{CuSO}_4$ sample.
+
+
+
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{ccccc}
+\toprule
+\textbf{Parameter} & \textbf{0.05M} & \textbf{0.1M} & \textbf{0.2M} \\
+\midrule
+A & $0.5973 \pm 0.0067$ & $0.4984 \pm 0.0034$ & $0.3865 \pm 0.0062$ \\
+$T_2$ (s) & $0.0199 \pm 0.0005$ & $0.0101 \pm 0.0002$ & $0.0045 \pm 0.0002$ \\
+c & $-0.0532 \pm 0.0073$ & $0.0056 \pm 0.0037$ & $0.0243 \pm 0.0068$ \\
+\bottomrule
+\end{tabular}
+\caption{Fit Parameters for Spin-Echo Sequences of CuSO$_4$ at Different Concentrations (Hahn Echo Method)}
+\label{tab:se}
+\end{table}
+
 \begin{figure}[H]
   \includegraphics[scale = 0.5]{Spin_echo_0.05M.pdf}
   \caption{Spin-echo sequences for 0.05M $\text{CuSO}_4$ sample. Different values of $\tau$ are plotted in light blue, ranging from 0.0001s to around 0.013s. }
