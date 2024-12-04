@@ -360,6 +360,30 @@ for the 0.2M concentration.
 \section{Determining $T_2$ using three different methods.}
 \subsection{Spin echo method}
 In order to determine $T_2$ using the spin-echo method, we are interested in the amplitudes of the echo with respect to time.
-For this, we first optimized the $\pi$ pulse by maximizing the echo and minimizing the FID of the second pulse. Then, we varied $\tau$ from around $0.0001\text{s}$ to $0.0130 \text{s}$, and plotted the resulting spectra in a single plot, ensuring proper alignment in time. Since different scales of the oscilloscope were used, alignment in time was crucial, and it was performed by manually shifting the $\frac{\pi}{2}$ pulse so that it peaked at time $t = 0$.
+For this, we first optimized the $\pi$ pulse by maximizing the echo and minimizing the FID of the second pulse. Then, we varied $\tau$ from around $0.0001\text{s}$ to $0.0130 \text{s}$, and plotted the resulting spectra in a single plot, which ensured proper alignment in time. Since different scales of the oscilloscope were used, alignment in time was crucial, and it was performed by manually shifting the $\frac{\pi}{2}$ pulse so that this peaked at time $t = 0$.
+Then, the peaks of the $\pi$ pulse were detected for each of the $t$ values (using the \verb|peak_find| function in Python). The height of these peaks decreases exponentially and can then be fit into a decaying exponential function \[
+	S(t) = A \cdot e^{-\frac{t}{T_2}} + c
+\]
+where A is again, the amplitude, $T_2$ is the spin-spin relaxation time and c is a shifting factor (irrelevant for our purposes here).
+The resulting fittings can be seen in Figures \ref{Spin_echo_0.05M.pdf}, \ref{Spin_echo_0.1M.pdf} and \ref{Spin_echo_0.2M.pdf}, for the 0.05, 0.1 and 0.2M respectively.
+\begin{figure}[H]
+  \includegraphics[scale = 0.5]{Spin_echo_0.05M.pdf}
+  \caption{Spin-echo sequences for 0.05M $\text{CuSO}_4$ sample. Different values of $\tau$ are plotted in light blue, ranging from 0.0001s to around 0.013s. }
+  \label{Spin_echo_0.05M.pdf}
+\end{figure}
+\begin{figure}[H]
+  \includegraphics[scale = 0.5]{Spin_echo_0.1M.pdf}
+  \caption{Spin-echo sequences for 0.1M $\text{CuSO}_4$ sample. Different values of $\tau$ are plotted in light blue, ranging from 0.0001s to around 0.013s. }
+  \label{Spin_echo_0.1M.pdf}
+\end{figure}
+\begin{figure}[H]
+  \includegraphics[scale = 0.5]{Spin_echo_0.2M.pdf}
+  \caption{Spin-echo sequences for 0.2M $\text{CuSO}_4$ sample. Different values of $\tau$ are plotted in light blue, ranging from 0.0001s to around 0.013s. }
+  \label{Spin_echo_0.2M.pdf}
+\end{figure}
+
+
+
+
 
 \end{document}

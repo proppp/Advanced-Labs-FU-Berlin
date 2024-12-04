@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 0 "main.bcf" "main.bbl" "main" 1733324621.87637 0
+["biber main"] 0 "main.bcf" "main.bbl" "main" 1733327835.00547 0
   "bib.bib" 0 -1 0 ""
   "main.bcf" 0 -1 0 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1733324619.39856 "main.tex" "main.pdf" "main" 1733324621.87668 2
+["pdflatex"] 1733327832.55417 "main.tex" "main.pdf" "main" 1733327835.00575 2
   "/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1731436073 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1731436073 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
   "/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1731436073 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
@@ -28,6 +28,7 @@
   "/usr/share/texmf-dist/fonts/tfm/public/lm/ec-lmr17.tfm" 1731436073 12156 ca1ae6a3c8564e89597f1f993fba1608 ""
   "/usr/share/texmf-dist/fonts/tfm/public/lm/ec-lmr6.tfm" 1731436073 12048 c1068d0f4772be9b0ec447692e1d6d82 ""
   "/usr/share/texmf-dist/fonts/tfm/public/lm/ec-lmr8.tfm" 1731436073 12064 a35db870f0b76c338d749c56dc030ef5 ""
+  "/usr/share/texmf-dist/fonts/tfm/public/lm/ec-lmtt12.tfm" 1731436073 1368 6a60e6a5e029141041d64d339b87e533 ""
   "/usr/share/texmf-dist/fonts/tfm/public/lm/lmbsy10.tfm" 1731436073 1300 2df9da0fc09d4a8c772b3dd386a47c6a ""
   "/usr/share/texmf-dist/fonts/tfm/public/lm/lmbsy5.tfm" 1731436073 1304 2ff0a255ae754422adbc0e6519ed2658 ""
   "/usr/share/texmf-dist/fonts/tfm/public/lm/lmbsy7.tfm" 1731436073 1304 535e0954c1961c817723e44bc6a9662c ""
@@ -71,6 +72,7 @@
   "/usr/share/texmf-dist/fonts/type1/public/lm/lmsy10.pfb" 1731436073 27863 09ce3735688ffde955e72da27c95b61a ""
   "/usr/share/texmf-dist/fonts/type1/public/lm/lmsy6.pfb" 1731436073 28109 6d61305ed3d0eb794ebe36f15cf44aa0 ""
   "/usr/share/texmf-dist/fonts/type1/public/lm/lmsy8.pfb" 1731436073 27802 5c876bb2c4040caaf035d60bd74a86bd ""
+  "/usr/share/texmf-dist/fonts/type1/public/lm/lmtt12.pfb" 1731436073 110323 92daea7ca7b4120bd2b54b047c93be27 ""
   "/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1731436073 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/share/texmf-dist/tex/generic/atbegshi/atbegshi.sty" 1731436073 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
   "/usr/share/texmf-dist/tex/generic/babel-english/english.ldf" 1731436073 7008 9ff5fdcc865b01beca2b0fe4a46231d4 ""
@@ -287,6 +289,7 @@
   "/usr/share/texmf-dist/tex/latex/lm/omxlmex.fd" 1731436073 568 a5494d810f2680caf10205cd1226c76c ""
   "/usr/share/texmf-dist/tex/latex/lm/ot1lmr.fd" 1731436073 1882 28c08db1407ebff35a658fd141753d16 ""
   "/usr/share/texmf-dist/tex/latex/lm/t1lmr.fd" 1731436073 1867 996fe743d88a01aca041ed22cc10e1bb ""
+  "/usr/share/texmf-dist/tex/latex/lm/t1lmtt.fd" 1731436073 2682 555da1faa2e266801e4b221d01a42cb5 ""
   "/usr/share/texmf-dist/tex/latex/lm/ts1lmr.fd" 1731436073 1914 884882d7ebb0fd65cea93fca77ff6f5a ""
   "/usr/share/texmf-dist/tex/latex/logreq/logreq.def" 1731436073 1620 fb1c32b818f2058eca187e5c41dfae77 ""
   "/usr/share/texmf-dist/tex/latex/logreq/logreq.sty" 1731436073 6187 b27afc771af565d3a9ff1ca7d16d0d46 ""
@@ -365,14 +368,17 @@
   "FID.png" 1732964825.94219 261522 aebaddf4fabb5715d86249388ddb4358 ""
   "Free_Induction_Decay_0.1M.pdf" 1733322207.9954 25452 0944d1a0d3736fa5ff81ed2b5288d039 ""
   "Free_Induction_Decay_0.2M.pdf" 1733322207.9954 22262 3e748fa47fe60a3037d3ac48976d991f ""
+  "Spin_echo_0.05M.pdf" 1733326838.63159 70087 f1bc36aae3d9e303b9ccb9a2d24d811e ""
+  "Spin_echo_0.1M.pdf" 1733326838.62959 62762 349513581fb780c27e3905f06fe3415b ""
+  "Spin_echo_0.2M.pdf" 1733326838.63059 58950 f1f030dec9fbb6837a113e3334ba10ad ""
   "element_spin.png" 1732964825.93519 288297 2d57375933b5bc9c7b547606a3c6c55b ""
   "exp_setup.png" 1732964825.94119 936530 a7f6daf0830c816979ca0833f6c2e360 ""
-  "main.aux" 1733324621.6485 8120 6cd9ce1a30de703782251a6efc636f1f "pdflatex"
+  "main.aux" 1733327834.78263 9756 c8fcd40a238ce07dd8aa105fd32de5af "pdflatex"
   "main.bbl" 0 -1 0 "biber main"
-  "main.out" 1733324621.6515 7075 182e88b32fa7951333bf81bebd60cc3b "pdflatex"
-  "main.run.xml" 1733324621.6555 2298 996a59df4c33d7f0d6850593e4895285 "pdflatex"
-  "main.tex" 1733324618.7455 19446 cb949c97b5a4f510fa59d7a71679154a ""
-  "main.toc" 1733324621.6565 2411 e30023ab99ac2806b56b2421e5f510a0 "pdflatex"
+  "main.out" 1733327834.78563 7075 182e88b32fa7951333bf81bebd60cc3b "pdflatex"
+  "main.run.xml" 1733327834.79063 2298 996a59df4c33d7f0d6850593e4895285 "pdflatex"
+  "main.tex" 1733327832.22463 20854 079463f6faeb3647a2c709eead603902 ""
+  "main.toc" 1733327834.79063 2412 a65dc7ec7e076f3ae08a040db1c07fe4 "pdflatex"
   (generated)
   "main.aux"
   "main.bcf"

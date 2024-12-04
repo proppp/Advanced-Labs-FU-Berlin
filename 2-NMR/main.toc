@@ -4,18 +4,18 @@
 \contentsline {subsection}{\numberline {1.2}Why nuclei have spin? Which samples will you measure and what exactly will give you the signal in the experiment?}{2}{subsection.1.2}%
 \contentsline {subsection}{\numberline {1.3}How do you understand "spin"? What is the gyromagnetic ratio of a proton?}{2}{subsection.1.3}%
 \contentsline {subsection}{\numberline {1.4}What happens to a nuclear spin in a magnetic field (Zeeman splitting, Larmor precession, Larmor frequency)}{3}{subsection.1.4}%
-\contentsline {subsection}{\numberline {1.5} Ensemble of spins. Populations of the spin levels. Macroscopic magnetization vector. Dynamics of the magnetization vector in the external magnetic field.}{3}{subsection.1.5}%
+\contentsline {subsection}{\numberline {1.5} Ensemble of spins. Populations of the spin levels. Macroscopic magnetization vector. Dynamics of the magnetization vector in the external magnetic field.}{4}{subsection.1.5}%
 \contentsline {subsection}{\numberline {1.6} Magnetic resonance: What is resonating?}{4}{subsection.1.6}%
 \contentsline {subsection}{\numberline {1.7}Rotating frame vs. laboratory frame. Dynamics of the magnetization vector: Blochs equations of motion.}{5}{subsection.1.7}%
 \contentsline {subsection}{\numberline {1.8} π/2 pulse. FID (free induction decay) with no relaxation processes. How do we detect an FID from an ensemble of magnetic nuclei? Sketch a setup.}{5}{subsection.1.8}%
-\contentsline {subsection}{\numberline {1.9}Relaxation times. T1 vs. T2 vs. T2*. You should know the differences between them.}{6}{subsection.1.9}%
+\contentsline {subsection}{\numberline {1.9}Relaxation times. T1 vs. T2 vs. T2*. You should know the differences between them.}{5}{subsection.1.9}%
 \contentsline {subsection}{\numberline {1.10}Bloch equations}{6}{subsection.1.10}%
 \contentsline {subsection}{\numberline {1.11}Spin echo. Pulse sequences.}{7}{subsection.1.11}%
-\contentsline {subsection}{\numberline {1.12}T2 and T2* measurements}{7}{subsection.1.12}%
+\contentsline {subsection}{\numberline {1.12}T2 and T2* measurements}{8}{subsection.1.12}%
 \contentsline {subsection}{\numberline {1.13}T1 (spin-lattice relaxation time) measurement.}{8}{subsection.1.13}%
 \contentsline {section}{\numberline {2} Experimental Setup}{8}{section.2}%
 \contentsline {section}{\numberline {3}Experiment Procedure}{9}{section.3}%
-\contentsline {section}{\numberline {4}Adjusting Parameters}{9}{section.4}%
-\contentsline {section}{\numberline {5}Determining the Free Induction Decay}{10}{section.5}%
-\contentsline {section}{\numberline {6}Determining $T_2$ using three different methods.}{13}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Spin echo method}{13}{subsection.6.1}%
+\contentsline {section}{\numberline {4}Adjusting Parameters}{10}{section.4}%
+\contentsline {section}{\numberline {5}Determining the Free Induction Decay}{11}{section.5}%
+\contentsline {section}{\numberline {6}Determining $T_2$ using three different methods.}{14}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Spin echo method}{14}{subsection.6.1}%
