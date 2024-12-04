@@ -19,3 +19,5 @@
 \contentsline {section}{\numberline {5}Determining the Free Induction Decay}{11}{section.5}%
 \contentsline {section}{\numberline {6}Determining $T_2$ using three different methods.}{14}{section.6}%
 \contentsline {subsection}{\numberline {6.1}Spin echo method}{14}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Carr-Purcell Method}{16}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Meiboom Gill Method}{16}{subsection.6.3}%
