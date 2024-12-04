@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.11.26)  4 DEC 2024 13:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.11.26)  4 DEC 2024 15:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1426,7 +1426,13 @@ Overfull \hbox (55.57375pt too wide) in paragraph at lines 295--301
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 310.
 (/usr/share/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [9 <./exp_setup.png>] [10{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}] (./main.aux)
+) [9 <./exp_setup.png>]
+<Free_Induction_Decay_0.1M.pdf, id=177, 722.7pt x 433.62pt>
+File: Free_Induction_Decay_0.1M.pdf Graphic file (type pdf)
+<use Free_Induction_Decay_0.1M.pdf>
+Package pdftex.def Info: Free_Induction_Decay_0.1M.pdf  used on input line 331.
+(pdftex.def)             Requested size: 361.3491pt x 216.80946pt.
+ [10{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}] [11 <./Free_Induction_Decay_0.1M.pdf>] (./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
@@ -1450,18 +1456,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 51173 strings out of 476023
- 1166282 string characters out of 5791581
- 2081250 words of memory out of 5000000
- 72351 multiletter control sequences out of 15000+600000
+ 51185 strings out of 476023
+ 1166657 string characters out of 5791581
+ 2081507 words of memory out of 5000000
+ 72361 multiletter control sequences out of 15000+600000
  626138 words of font info for 84 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  98i,9n,115p,1171b,2252s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (11 pages, 1679602 bytes).
+</usr/share/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (12 pages, 1707619 bytes).
 PDF statistics:
- 260 PDF objects out of 1000 (max. 8388607)
- 208 compressed objects within 3 object streams
- 35 named destinations out of 1000 (max. 500000)
- 172 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 326 PDF objects out of 1000 (max. 8388607)
+ 224 compressed objects within 3 object streams
+ 37 named destinations out of 1000 (max. 500000)
+ 177 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -670,6 +670,11 @@ INPUT /usr/share/texmf-dist/fonts/tfm/public/lm/lmmib5.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/lm/lmbsy5.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
+INPUT ./Free_Induction_Decay_0.1M.pdf
+INPUT ./Free_Induction_Decay_0.1M.pdf
+INPUT ./Free_Induction_Decay_0.1M.pdf
+INPUT ./Free_Induction_Decay_0.1M.pdf
+INPUT ./Free_Induction_Decay_0.1M.pdf
 INPUT /usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc
 INPUT main.aux
 INPUT ./main.out
@@ -680,6 +685,7 @@ INPUT /usr/share/texmf-dist/fonts/type1/public/lm/lmbx10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/lm/lmbx12.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/lm/lmex10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/lm/lmmi12.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/lm/lmmi6.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/lm/lmmi8.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/lm/lmr10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/lm/lmr12.pfb
