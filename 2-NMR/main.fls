@@ -662,6 +662,14 @@ INPUT /usr/share/texmf-dist/tex/latex/lm/ts1lmr.fd
 INPUT /usr/share/texmf-dist/tex/latex/lm/ts1lmr.fd
 INPUT /usr/share/texmf-dist/tex/latex/lm/ts1lmr.fd
 INPUT /usr/share/texmf-dist/fonts/tfm/public/lm/ts1-lmr12.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/lm/rm-lmr5.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/lm/lmmi5.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/lm/lmsy5.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/lm/rm-lmbx5.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/lm/lmmib5.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/lm/lmbsy5.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
 INPUT /usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc
 INPUT main.aux
 INPUT ./main.out
