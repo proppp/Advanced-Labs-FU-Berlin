@@ -325,7 +325,9 @@ In order to determine the Free Induction Decay time $T_2^*$, we are interested i
 This done, we are now interested in the envelope of this resulting decaying signal. It can be described as  \[
 	S(t) = A \cdot e^{-\frac{t}{T_0}}
 \]
-where A is the amplitude, and $T_0 \coloneq T_2^*$. The fitted parameters were then obtained as ${T_2^*}_{0.1M} = 1.2 \text{ms}$ and ${T_2^*}_{0.1M} = 1.8 \text{ms}$ for the 0.1M and 0.2M concentrations respectively. It was also noticed tat the amplitude of the 0.2M concentration was lower than the 0.1M concontration, which may be counterintuitive because with increasing concentration one would naively expect also an increased signal. More on this will be discussed later.
+where A is the amplitude, and $T_0 \coloneq T_2^*$. The fitted parameters were then obtained as ${T_2^*}_{0.1M} = 0.12 \text{ms}$ and ${T_2^*}_{0.2M} = 0.18 \text{ms}$ for the 0.1M and 0.2M concentrations respectively.
+
+So we see a longer decaying time for the higher concentration sample. It was also noticed tat the amplitude of the 0.2M concentration was lower than the 0.1M concontration, which may be counterintuitive because with increasing concentration one would naively expect also an increased signal. More on this will be discussed later.
 
 \begin{figure}[H]
   \includegraphics[scale = 0.5]{Free_Induction_Decay_0.1M.pdf}
@@ -338,6 +340,19 @@ where A is the amplitude, and $T_0 \coloneq T_2^*$. The fitted parameters were t
   \caption{Free Induction Decay measurement for the 0.2M $\text{CuSO}_4$ sample. The data was taken from the spin-echo measurements of the following task, and was averaged so as to emphasize the $\frac{\pi}{2}$ pulse. The single measurements are plotted in light blue, and the average in green. A decaying exponential fit was then performed to read off $T_2^*$.}
   \label{Free_Induction_Decay_0.2M.pdf}
 \end{figure}
+
+From the FID, we can then determine the magnetic field inhomegeneity, which, in the approximation $T_2^* \ll T_2$ is given by \[
+\Delta B = \frac{\ln2}{\gamma T_2^*}
+\].
+Plugging the numbers in (where $\gamma = 42.58 \frac{\text{MHz}}{\text{T}}$, we got for the 0.1M concentration \[
+	\Delta B \approx 135.6 \mu\text{T}
+\]
+and \[
+	\Delta B \approx 90.437 \mu\text{T}
+\]
+for the 0.2M concentration.
+
+
 % The reference list will be generated automatically based on the keys
 % you use in your article and their metadata in the bibtex file
 %\bibliography{references}
