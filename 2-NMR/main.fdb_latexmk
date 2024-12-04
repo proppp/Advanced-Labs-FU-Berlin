@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 0 "main.bcf" "main.bbl" "main" 1733322625.85509 0
+["biber main"] 0 "main.bcf" "main.bbl" "main" 1733322995.63666 0
   "bib.bib" 0 -1 0 ""
   "main.bcf" 0 -1 0 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1733322623.40651 "main.tex" "main.pdf" "main" 1733322625.85543 2
+["pdflatex"] 1733322993.20785 "main.tex" "main.pdf" "main" 1733322995.63696 2
   "/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1731436073 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1731436073 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
   "/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1731436073 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
@@ -360,14 +360,15 @@
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1732635756 7603443 3af45d37bd906d73194bb9f698e9f180 ""
   "FID.png" 1732964825.94219 261522 aebaddf4fabb5715d86249388ddb4358 ""
   "Free_Induction_Decay_0.1M.pdf" 1733322207.9954 25452 0944d1a0d3736fa5ff81ed2b5288d039 ""
+  "Free_Induction_Decay_0.2M.pdf" 1733322207.9954 22262 3e748fa47fe60a3037d3ac48976d991f ""
   "element_spin.png" 1732964825.93519 288297 2d57375933b5bc9c7b547606a3c6c55b ""
   "exp_setup.png" 1732964825.94119 936530 a7f6daf0830c816979ca0833f6c2e360 ""
-  "main.aux" 1733322625.60841 6874 d99aa10de71042c359b83277b0407631 "pdflatex"
+  "main.aux" 1733322995.41743 7850 803836f22b545a5e0fc036e7518a14ea "pdflatex"
   "main.bbl" 0 -1 0 "biber main"
-  "main.out" 1733322625.61141 6647 2e256453e652db9bce84f2053e705ee5 "pdflatex"
-  "main.run.xml" 1733322625.61641 2298 996a59df4c33d7f0d6850593e4895285 "pdflatex"
-  "main.tex" 1733322622.79641 17331 3f5b4668815933e0670f935652a963e8 ""
-  "main.toc" 1733322625.61641 2223 3afd13b71f0cb8ffbfa77bfc5dde55b1 "pdflatex"
+  "main.out" 1733322995.42043 6647 2e256453e652db9bce84f2053e705ee5 "pdflatex"
+  "main.run.xml" 1733322995.42543 2298 996a59df4c33d7f0d6850593e4895285 "pdflatex"
+  "main.tex" 1733322992.60243 17984 712b94b6e90550a01c72eddb1512ad16 ""
+  "main.toc" 1733322995.42543 2223 3afd13b71f0cb8ffbfa77bfc5dde55b1 "pdflatex"
   (generated)
   "main.aux"
   "main.bcf"
