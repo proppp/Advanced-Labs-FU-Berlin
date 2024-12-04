@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.11.26)  4 DEC 2024 18:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.11.26)  4 DEC 2024 18:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1521,7 +1521,27 @@ File: MG_0.2.pdf Graphic file (type pdf)
 <use MG_0.2.pdf>
 Package pdftex.def Info: MG_0.2.pdf  used on input line 443.
 (pdftex.def)             Requested size: 361.3491pt x 216.80946pt.
- [19 <./MG_0.05.pdf> <./MG_0.1.pdf>] [20 <./MG_0.2.pdf>] (./main.aux)
+ [19 <./MG_0.05.pdf> <./MG_0.1.pdf>]
+Runaway argument?
+{
+./main.tex:452: Paragraph ended before \@sect was complete.
+<to be read again> 
+                   \par 
+l.452 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+./main.tex:452: Too many }'s.
+\@xdblarg #1#2->#1[{#2}
+                       ]{#2}
+l.452 
+      
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
+
+[20 <./MG_0.2.pdf>] (./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
@@ -1553,7 +1573,7 @@ Here is how much of TeX's memory you used:
  14 hyphenation exceptions out of 8191
  98i,9n,115p,1171b,2252s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (21 pages, 2044600 bytes).
+Output written on main.pdf (21 pages, 2044614 bytes).
 PDF statistics:
  915 PDF objects out of 1000 (max. 8388607)
  348 compressed objects within 4 object streams
