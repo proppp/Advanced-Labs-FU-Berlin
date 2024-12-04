@@ -448,6 +448,23 @@ To perform the MG measurement, we turned on the MG switch of the setup, which ta
 %TODO add tables for MG and CP with the fitting data. There's a pretty good consistency at least between MG and SE. CP kinda sucks.
 
 
-\subsection{}
-
+\section{Inversion Recovery}
+Determining $T_1$ is done via the Inversion Recovery method. This consists in applying a $\pi-\tau-\frac{\pi}{2}$ pulse, at a varying values of $\tau$. We are interested in the amplitude of the signal right after the $\frac{\pi}{2}$ pulse is applied, and how it depends on $\tau$. An effect that needs to be taken into account when performing this task is that the instrument measures the absolute values of the signal, which means that after the inversion pulse, the magnetization is recorded as positive values, even though it’s actually decaying toward equilibrium. This leads to an apparent "positive" signal recovery, even though the magnetization itself is recovering in the negative direction initially (after the $\pi$ pulse). To correct this, we need reverse the sign of the measured signal values after the inversion pulse (i.e., use negative values for the data points), so that the plot correctly represents the recovery of the magnetization toward its equilibrium value. Once the sign is corrected, the exponential recovery can be accurately fit to the function  \[
+	S(t) = A \cdot \left( 1 - 2e^{-\frac{t}{T_1}} \right)
+\]
+\begin{figure}[H]
+  \includegraphics[scale = 0.6]{IR_0.05.pdf}
+  \caption{Inversion Recovery method for the 0.05M $\text{CuSO}_4$ sample.}
+  \label{IR_0.05.pdf}
+\end{figure}
+\begin{figure}[H]
+  \includegraphics[scale = 0.6]{IR_0.1.pdf}
+  \caption{Inversion Recovery method for the 0.1M $\text{CuSO}_4$ sample.}
+  \label{IR_0.1.pdf}
+\end{figure}
+\begin{figure}[H]
+  \includegraphics[scale = 0.6]{IR_0.2.pdf}
+  \caption{Inversion Recovery method for the 0.2M $\text{CuSO}_4$ sample.}
+  \label{IR_0.2.pdf}
+\end{figure}
 \end{document}
