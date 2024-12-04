@@ -17,3 +17,5 @@
 \contentsline {section}{\numberline {3}Experiment Procedure}{9}{section.3}%
 \contentsline {section}{\numberline {4}Adjusting Parameters}{9}{section.4}%
 \contentsline {section}{\numberline {5}Determining the Free Induction Decay}{10}{section.5}%
+\contentsline {section}{\numberline {6}Determining $T_2$ using three different methods.}{13}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Spin echo method}{13}{subsection.6.1}%
