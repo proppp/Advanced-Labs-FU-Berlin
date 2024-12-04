@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.11.26)  4 DEC 2024 18:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.11.26)  4 DEC 2024 18:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1488,23 +1488,40 @@ File: Spin_echo_0.2M.pdf Graphic file (type pdf)
 Package pdftex.def Info: Spin_echo_0.2M.pdf  used on input line 400.
 (pdftex.def)             Requested size: 361.3491pt x 216.80946pt.
  [15 <./Spin_echo_0.05M.pdf> <./Spin_echo_0.1M.pdf>]
-<MG_0.05.pdf, id=451, 722.7pt x 433.62pt>
-File: MG_0.05.pdf Graphic file (type pdf)
-<use MG_0.05.pdf>
-Package pdftex.def Info: MG_0.05.pdf  used on input line 415.
+<CP_0.05.pdf, id=451, 722.7pt x 433.62pt>
+File: CP_0.05.pdf Graphic file (type pdf)
+<use CP_0.05.pdf>
+Package pdftex.def Info: CP_0.05.pdf  used on input line 410.
 (pdftex.def)             Requested size: 361.3491pt x 216.80946pt.
-<MG_0.1.pdf, id=452, 722.7pt x 433.62pt>
-File: MG_0.1.pdf Graphic file (type pdf)
-<use MG_0.1.pdf>
-Package pdftex.def Info: MG_0.1.pdf  used on input line 420.
+<CP_0.1.pdf, id=452, 722.7pt x 433.62pt>
+File: CP_0.1.pdf Graphic file (type pdf)
+<use CP_0.1.pdf>
+Package pdftex.def Info: CP_0.1.pdf  used on input line 415.
 (pdftex.def)             Requested size: 361.3491pt x 216.80946pt.
  [16 <./Spin_echo_0.2M.pdf>]
-<MG_0.2.pdf, id=509, 722.7pt x 433.62pt>
+<CP_0.2.pdf, id=509, 722.7pt x 433.62pt>
+File: CP_0.2.pdf Graphic file (type pdf)
+<use CP_0.2.pdf>
+Package pdftex.def Info: CP_0.2.pdf  used on input line 420.
+(pdftex.def)             Requested size: 361.3491pt x 216.80946pt.
+ [17 <./CP_0.05.pdf> <./CP_0.1.pdf>]
+<MG_0.05.pdf, id=611, 722.7pt x 433.62pt>
+File: MG_0.05.pdf Graphic file (type pdf)
+<use MG_0.05.pdf>
+Package pdftex.def Info: MG_0.05.pdf  used on input line 433.
+(pdftex.def)             Requested size: 361.3491pt x 216.80946pt.
+<MG_0.1.pdf, id=612, 722.7pt x 433.62pt>
+File: MG_0.1.pdf Graphic file (type pdf)
+<use MG_0.1.pdf>
+Package pdftex.def Info: MG_0.1.pdf  used on input line 438.
+(pdftex.def)             Requested size: 361.3491pt x 216.80946pt.
+ [18 <./CP_0.2.pdf>]
+<MG_0.2.pdf, id=667, 722.7pt x 433.62pt>
 File: MG_0.2.pdf Graphic file (type pdf)
 <use MG_0.2.pdf>
-Package pdftex.def Info: MG_0.2.pdf  used on input line 425.
+Package pdftex.def Info: MG_0.2.pdf  used on input line 443.
 (pdftex.def)             Requested size: 361.3491pt x 216.80946pt.
- [17 <./MG_0.05.pdf> <./MG_0.1.pdf>] [18 <./MG_0.2.pdf>] (./main.aux)
+ [19 <./MG_0.05.pdf> <./MG_0.1.pdf>] [20 <./MG_0.2.pdf>] (./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
@@ -1528,18 +1545,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 51339 strings out of 476023
- 1169565 string characters out of 5791581
- 2083769 words of memory out of 5000000
- 72488 multiletter control sequences out of 15000+600000
+ 51371 strings out of 476023
+ 1170152 string characters out of 5791581
+ 2084470 words of memory out of 5000000
+ 72515 multiletter control sequences out of 15000+600000
  641711 words of font info for 101 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  98i,9n,115p,1171b,2252s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (19 pages, 1990195 bytes).
+Output written on main.pdf (21 pages, 2044600 bytes).
 PDF statistics:
- 758 PDF objects out of 1000 (max. 8388607)
- 323 compressed objects within 4 object streams
- 56 named destinations out of 1000 (max. 500000)
- 244 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 915 PDF objects out of 1000 (max. 8388607)
+ 348 compressed objects within 4 object streams
+ 61 named destinations out of 1000 (max. 500000)
+ 259 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 0 "main.bcf" "main.bbl" "main" 1733332008.33404 0
+["biber main"] 0 "main.bcf" "main.bbl" "main" 1733332261.76781 0
   "bib.bib" 0 -1 0 ""
   "main.bcf" 0 -1 0 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1733332005.8413 "main.tex" "main.pdf" "main" 1733332008.33434 2
+["pdflatex"] 1733332259.24231 "main.tex" "main.pdf" "main" 1733332261.76814 2
   "/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1731436073 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1731436073 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
   "/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1731436073 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
@@ -365,6 +365,9 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1731436073 41588 b43d3e860a4f94167ee1e725ff526a72 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1732635782.47905 5307366 7c8b2c5f25a30f46e808245b8e6cf269 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1732635756 7603443 3af45d37bd906d73194bb9f698e9f180 ""
+  "CP_0.05.pdf" 1733332152.4878 20431 ed462bee1a560cbfac6b589fbf73579b ""
+  "CP_0.1.pdf" 1733332152.4868 21553 3697e548902c11a821ac59fc9c03f2be ""
+  "CP_0.2.pdf" 1733332152.4878 22197 2a5912cef5b7cc0b546e40e89f60f731 ""
   "FID.png" 1732964825.94219 261522 aebaddf4fabb5715d86249388ddb4358 ""
   "Free_Induction_Decay_0.1M.pdf" 1733322207.9954 25452 0944d1a0d3736fa5ff81ed2b5288d039 ""
   "Free_Induction_Decay_0.2M.pdf" 1733322207.9954 22262 3e748fa47fe60a3037d3ac48976d991f ""
@@ -376,12 +379,12 @@
   "Spin_echo_0.2M.pdf" 1733326838.63059 58950 f1f030dec9fbb6837a113e3334ba10ad ""
   "element_spin.png" 1732964825.93519 288297 2d57375933b5bc9c7b547606a3c6c55b ""
   "exp_setup.png" 1732964825.94119 936530 a7f6daf0830c816979ca0833f6c2e360 ""
-  "main.aux" 1733332008.0808 11446 0e81e18b7ca152c950905b397db1ea04 "pdflatex"
+  "main.aux" 1733332261.53081 12535 2c1277c39462d9c5363e41f64215c87f "pdflatex"
   "main.bbl" 0 -1 0 "biber main"
-  "main.out" 1733332008.0838 7390 37c2effb7a28ac0e0956bd3fc086d650 "pdflatex"
-  "main.run.xml" 1733332008.0888 2298 996a59df4c33d7f0d6850593e4895285 "pdflatex"
-  "main.tex" 1733332005.4918 22721 e917506746a476b7bbc711ca187a49f7 ""
-  "main.toc" 1733332008.0888 2584 02247dbf20202a745aa89f8e27cd0cee "pdflatex"
+  "main.out" 1733332261.53381 7390 37c2effb7a28ac0e0956bd3fc086d650 "pdflatex"
+  "main.run.xml" 1733332261.53781 2298 996a59df4c33d7f0d6850593e4895285 "pdflatex"
+  "main.tex" 1733332257.54081 23222 4ab81186291e6145cbdcbe98f0a7b59b ""
+  "main.toc" 1733332261.53781 2584 c58b99307f0cc9e80e4d51f714addf95 "pdflatex"
   (generated)
   "main.aux"
   "main.bcf"
