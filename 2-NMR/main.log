@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.11.26)  4 DEC 2024 17:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.11.26)  4 DEC 2024 18:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1296,7 +1296,7 @@ You may provide a definition with
 \openout6 = `main.toc'.
 
  [1{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}]
-<element_spin.png, id=133, 706.64pt x 465.74pt>
+<element_spin.png, id=143, 706.64pt x 465.74pt>
 File: element_spin.png Graphic file (type png)
 <use element_spin.png>
 Package pdftex.def Info: element_spin.png  used on input line 108.
@@ -1350,7 +1350,7 @@ l.189 ...mble of magnetic nuclei? Sketch a setup.}
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
-<FID.png, id=155, 1369.115pt x 846.16125pt>
+<FID.png, id=166, 1369.115pt x 846.16125pt>
 File: FID.png Graphic file (type png)
 <use FID.png>
 Package pdftex.def Info: FID.png  used on input line 195.
@@ -1370,7 +1370,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 196--196
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [5] [6 <./FID.png>] [7] [8]
-<exp_setup.png, id=178, 1161.33875pt x 869.2475pt>
+<exp_setup.png, id=188, 1161.33875pt x 869.2475pt>
 File: exp_setup.png Graphic file (type png)
 <use exp_setup.png>
 Package pdftex.def Info: exp_setup.png  used on input line 281.
@@ -1431,13 +1431,13 @@ LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 31
  (/usr/share/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [10{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
-<Free_Induction_Decay_0.1M.pdf, id=193, 722.7pt x 433.62pt>
+<Free_Induction_Decay_0.1M.pdf, id=203, 722.7pt x 433.62pt>
 File: Free_Induction_Decay_0.1M.pdf Graphic file (type pdf)
 <use Free_Induction_Decay_0.1M.pdf>
 Package pdftex.def Info: Free_Induction_Decay_0.1M.pdf  used on input line 333.
 (pdftex.def)             Requested size: 361.3491pt x 216.80946pt.
  [11]
-<Free_Induction_Decay_0.2M.pdf, id=201, 722.7pt x 433.62pt>
+<Free_Induction_Decay_0.2M.pdf, id=211, 722.7pt x 433.62pt>
 File: Free_Induction_Decay_0.2M.pdf Graphic file (type pdf)
 <use Free_Induction_Decay_0.2M.pdf>
 Package pdftex.def Info: Free_Induction_Decay_0.2M.pdf  used on input line 339.
@@ -1471,23 +1471,40 @@ See the caption package documentation for explanation.
 
 LaTeX Warning: Reference `tab:se' on page 14 undefined on input line 369.
 
-<Spin_echo_0.05M.pdf, id=318, 722.7pt x 433.62pt>
+<Spin_echo_0.05M.pdf, id=328, 722.7pt x 433.62pt>
 File: Spin_echo_0.05M.pdf Graphic file (type pdf)
 <use Spin_echo_0.05M.pdf>
 Package pdftex.def Info: Spin_echo_0.05M.pdf  used on input line 390.
 (pdftex.def)             Requested size: 361.3491pt x 216.80946pt.
-<Spin_echo_0.1M.pdf, id=319, 722.7pt x 433.62pt>
+<Spin_echo_0.1M.pdf, id=329, 722.7pt x 433.62pt>
 File: Spin_echo_0.1M.pdf Graphic file (type pdf)
 <use Spin_echo_0.1M.pdf>
 Package pdftex.def Info: Spin_echo_0.1M.pdf  used on input line 395.
 (pdftex.def)             Requested size: 361.3491pt x 216.80946pt.
 [14]
-<Spin_echo_0.2M.pdf, id=329, 722.7pt x 433.62pt>
+<Spin_echo_0.2M.pdf, id=339, 722.7pt x 433.62pt>
 File: Spin_echo_0.2M.pdf Graphic file (type pdf)
 <use Spin_echo_0.2M.pdf>
 Package pdftex.def Info: Spin_echo_0.2M.pdf  used on input line 400.
 (pdftex.def)             Requested size: 361.3491pt x 216.80946pt.
- [15 <./Spin_echo_0.05M.pdf> <./Spin_echo_0.1M.pdf>] [16 <./Spin_echo_0.2M.pdf>] (./main.aux)
+ [15 <./Spin_echo_0.05M.pdf> <./Spin_echo_0.1M.pdf>]
+<MG_0.05.pdf, id=451, 722.7pt x 433.62pt>
+File: MG_0.05.pdf Graphic file (type pdf)
+<use MG_0.05.pdf>
+Package pdftex.def Info: MG_0.05.pdf  used on input line 415.
+(pdftex.def)             Requested size: 361.3491pt x 216.80946pt.
+<MG_0.1.pdf, id=452, 722.7pt x 433.62pt>
+File: MG_0.1.pdf Graphic file (type pdf)
+<use MG_0.1.pdf>
+Package pdftex.def Info: MG_0.1.pdf  used on input line 420.
+(pdftex.def)             Requested size: 361.3491pt x 216.80946pt.
+ [16 <./Spin_echo_0.2M.pdf>]
+<MG_0.2.pdf, id=509, 722.7pt x 433.62pt>
+File: MG_0.2.pdf Graphic file (type pdf)
+<use MG_0.2.pdf>
+Package pdftex.def Info: MG_0.2.pdf  used on input line 425.
+(pdftex.def)             Requested size: 361.3491pt x 216.80946pt.
+ [17 <./MG_0.05.pdf> <./MG_0.1.pdf>] [18 <./MG_0.2.pdf>] (./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
@@ -1499,14 +1516,8 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: 182E88B32FA7951333BF81BEBD60CC3B;7075
-(rerunfilecheck)             After:  37C2EFFB7A28AC0E0956BD3FC086D650;7390.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 37C2EFFB7A28AC0E0956BD3FC086D650;7390.
 
 Package biblatex Warning: Please (re)run Biber on the file:
 (biblatex)                main
@@ -1517,18 +1528,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 51305 strings out of 476023
- 1168946 string characters out of 5791581
+ 51339 strings out of 476023
+ 1169565 string characters out of 5791581
  2083769 words of memory out of 5000000
- 72459 multiletter control sequences out of 15000+600000
+ 72488 multiletter control sequences out of 15000+600000
  641711 words of font info for 101 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  98i,9n,115p,1171b,2252s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (17 pages, 1936809 bytes).
+Output written on main.pdf (19 pages, 1990195 bytes).
 PDF statistics:
- 593 PDF objects out of 1000 (max. 8388607)
- 289 compressed objects within 3 object streams
- 51 named destinations out of 1000 (max. 500000)
- 213 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 758 PDF objects out of 1000 (max. 8388607)
+ 323 compressed objects within 4 object streams
+ 56 named destinations out of 1000 (max. 500000)
+ 244 words of extra memory for PDF output out of 10000 (max. 10000000)
 
