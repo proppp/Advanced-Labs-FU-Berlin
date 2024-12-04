@@ -13,9 +13,9 @@ calibration_prominence = 0.1  # Prominence for finding the first peak to align t
 # Peak marking parameters
 peak_prominence = 0.01  # You can adjust this value for marking peaks
 
-# Exponential fit function
-def exp_decay(x, A, lambd, C):
-    return A * np.exp(-lambd * x) + C
+# New exponential fit function: A * e^(-t/T_2) + c
+def exp_decay(t, A, T_2, c):
+    return A * np.exp(-t / T_2) + c
 
 # Plot settings
 plt.figure(figsize=(10, 6))  # Create a larger figure for better visualization
@@ -79,16 +79,19 @@ if len(global_x) >= 3:  # Ensure enough points for fitting
     global_x = np.array(global_x)
     global_y = np.array(global_y)
 
-    # Perform the curve fit
-    popt, _ = curve_fit(exp_decay, global_x, global_y, p0=(1, 1, 0))
+    # Perform the curve fit with the new fitting function
+    popt, pcov = curve_fit(exp_decay, global_x, global_y, p0=(1, 1, 0))
+
+    # Calculate the standard deviations (errors) of the fit parameters
+    perr = np.sqrt(np.diag(pcov))  # Standard errors from the covariance matrix
 
     # Generate smooth x values for plotting the fit
     x_fit = np.linspace(min(global_x), max(global_x), 500)
     y_fit = exp_decay(x_fit, *popt)
 
     # Plot the exponential fit
-    plt.plot(x_fit, y_fit, color='black', label='Exponential Fit')
-    print(f"Fitted parameters: A={popt[0]:.4f}, λ={popt[1]:.4f}, C={popt[2]:.4f}")
+    plt.plot(x_fit, y_fit, color='black', label=f'Exp Fit: A={popt[0]:.4f}±{perr[0]:.4f}, T_2={popt[1]:.4f}±{perr[1]:.4f}, c={popt[2]:.4f}±{perr[2]:.4f}')
+    print(f"Fitted parameters: A={popt[0]:.4f} ± {perr[0]:.4f}, T_2={popt[1]:.4f} ± {perr[1]:.4f}, c={popt[2]:.4f} ± {perr[2]:.4f}")
 else:
     print("Not enough points for fitting across all files.")
 
@@ -96,6 +99,16 @@ else:
 plt.xlabel("Adjusted Time (s)")
 plt.ylabel("Amplitude")
 plt.title("Aligned Plots with Exponential Fits")
+
+plt.title(f"Spin-Echo Sequences for CuSO₄, 0.05M (Hahn Echo Method)")
 plt.legend()
 plt.grid(True)
+
+# Save the plot as a PDF
+output_pdf_path = "Spin_echo_0.05M.pdf"
+plt.savefig(output_pdf_path, format='pdf')
+
+# Show the plot
 plt.show()
+
+print(f"Plot saved as {output_pdf_path}")
