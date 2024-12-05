@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 0 "main.bcf" "main.bbl" "main" 1733348181.68616 0
+["biber main"] 0 "main.bcf" "main.bbl" "main" 1733400802.58191 0
   "bib.bib" 0 -1 0 ""
   "main.bcf" 0 -1 0 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1733348179.17775 "main.tex" "main.pdf" "main" 1733348181.68653 2
+["pdflatex"] 1733400800.00354 "main.tex" "main.pdf" "main" 1733400802.58224 2
   "/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1731436073 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1731436073 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
   "/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1731436073 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
@@ -382,12 +382,13 @@
   "Spin_echo_0.2M.pdf" 1733326838.63059 58950 f1f030dec9fbb6837a113e3334ba10ad ""
   "element_spin.png" 1732964825.93519 288297 2d57375933b5bc9c7b547606a3c6c55b ""
   "exp_setup.png" 1732964825.94119 936530 a7f6daf0830c816979ca0833f6c2e360 ""
-  "main.aux" 1733348181.46046 13712 c315edbc02f64c5249720417124d6952 "pdflatex"
+  "main.aux" 1733400802.33614 14422 b26a3120c4ef8e2f1ea4eb882f5260a4 "pdflatex"
   "main.bbl" 0 -1 0 "biber main"
-  "main.out" 1733348181.46346 7527 e2efc82380581c5a3f955d208b661a12 "pdflatex"
-  "main.run.xml" 1733348181.46846 2298 996a59df4c33d7f0d6850593e4895285 "pdflatex"
-  "main.tex" 1733348177.94346 25039 b60c22dc3bc1cd590fe4d0fffc581593 ""
-  "main.toc" 1733348181.46846 2659 7a0255002899fea2a71f8030ecca4cd0 "pdflatex"
+  "main.out" 1733400802.33914 4516 be7b0e756fb163fb1678926a58edde53 "pdflatex"
+  "main.run.xml" 1733400802.34314 2298 996a59df4c33d7f0d6850593e4895285 "pdflatex"
+  "main.tex" 1733400799.86014 30143 9f5bb7f6f9586965354e8c1d9fcaacad ""
+  "main.toc" 1733400802.34314 2157 3d039e535a1b2691beee07e058e269bc "pdflatex"
+  "relaxation_times_vs_concentration.pdf" 1733399495.00109 19048 2d3cc3d6dd9bc0da0701717c460a621f ""
   (generated)
   "main.aux"
   "main.bcf"

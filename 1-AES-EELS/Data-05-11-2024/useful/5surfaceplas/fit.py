@@ -138,5 +138,5 @@ def fit_al_kll_peaks_with_baseline(file_path):
         print(f"No valid data found in {file_path}.")
 
 # Example usage:
-file_path = './surface1.txt'  # Replace with your actual file path
+file_path = './surface3.txt'  # Replace with your actual file path
 fit_al_kll_peaks_with_baseline(file_path)

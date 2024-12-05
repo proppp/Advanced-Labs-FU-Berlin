@@ -13,7 +13,6 @@ def plot_and_correct_energy(folder_path, ranges, fixed_peak_value=1393.5):
     # Define custom labels for the legend based on ranges
     labels = [
         "Al L₂,₃VV ({:.2f}eV)",
-        "B KVV ({:.2f}eV)",  # Replacing "thsi" with "B KVV"
         "C KVV ({:.2f}eV)",
         "N KVV ({:.2f}eV)",  # Replacing "thsi2" with "N KVV"
         "O KVV ({:.2f}eV)",
@@ -137,5 +136,5 @@ def plot_and_correct_energy(folder_path, ranges, fixed_peak_value=1393.5):
 
 # Example usage:
 folder_path = '.'  # Replace with your actual folder path
-ranges = [(58, 105), (143, 160), (266, 305),(367, 400), (492, 542), (1368, 1385)]  # Specify the four ranges here
+ranges = [(58, 105), (266, 305),(367, 400), (492, 542), (1368, 1385)]  # Specify the four ranges here
 plot_and_correct_energy(folder_path, ranges)

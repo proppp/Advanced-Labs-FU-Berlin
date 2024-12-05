@@ -5,15 +5,16 @@ import matplotlib.pyplot as plt
 import numpy as np
 from scipy.optimize import curve_fit
 
-# Define the derivative of the Gaussian function
-def gaussian_derivative(x, A, mu, sigma):
-    return A * (-2 * (x - mu) / sigma**2) * np.exp(-(x - mu)**2 / (2 * sigma**2))
+# Define the derivative of the Gaussian function with a vertical offset
+def gaussian_derivative(x, A, mu, sigma, C=0):
+    return A * (-2 * (x - mu) / sigma**2) * np.exp(-(x - mu)**2 / (2 * sigma**2)) + C
 
 def plot_two_spectra_with_selected_dashed_lines(folder_path, ranges, offset=25000):
-    # Define custom labels for the legend based on ranges
+    # Define updated custom labels for the legend based on ranges
     labels = [
         "Al L₂,₃VV (μ = {:.2f} eV)",
         "C KVV (μ = {:.2f} eV)",
+        "N KVV (μ = {:.2f} eV)",
         "O KVV (μ = {:.2f} eV)",
         "Al KL₂,₃L₂,₃ (μ = {:.2f} eV)"
     ]
@@ -53,7 +54,7 @@ def plot_two_spectra_with_selected_dashed_lines(folder_path, ranges, offset=2500
         return
 
     # Plot the spectra for both samples
-    plt.figure(figsize=(10, 6))
+    plt.figure(figsize=(12, 7))
 
     # Plot cleaned data
     plt.plot(cleaned_data['X'], cleaned_data['Y'], linestyle='-', color='b', label='Cleaned Sample Data')
@@ -62,14 +63,10 @@ def plot_two_spectra_with_selected_dashed_lines(folder_path, ranges, offset=2500
     plt.plot(uncleaned_data['X'], uncleaned_data['Y'] + offset, linestyle='-', color='orange', label='Uncleaned Sample Data')
 
     # Fit Gaussian derivatives and plot vertical dashed lines at each μ
-    colors = ['r', 'g', 'purple', 'orange']  # Colors for each range
+    colors = ['r', 'g', 'purple', 'orange', 'brown']  # Colors for each range
     for i, x_range in enumerate(ranges):
-        # Variable to store only the "dirty" mu for C KVV and O KVV transitions
-        use_dirty_mu_only = (i == 1 or i == 2)  # Carbon (index 1) and Oxygen (index 2)
-
-        # Initialize mu to None for both samples
-        mu_dirty = None
-        mu_clean = None
+        # Track mu values for cleaned and uncleaned data
+        mu_clean, mu_dirty = None, None
 
         for sample_data, sample_label in zip([cleaned_data, uncleaned_data], ["Cleaned", "Uncleaned"]):
             # Filter data for the current range
@@ -82,12 +79,11 @@ def plot_two_spectra_with_selected_dashed_lines(folder_path, ranges, offset=2500
                         gaussian_derivative,
                         df_range['X'],
                         df_range['Y'],
-                        p0=[1, np.mean(df_range['X']), np.std(df_range['X'])]
+                        p0=[10000, np.mean(df_range['X']), np.std(df_range['X']), 0]
                     )
-                    _, mu, _ = popt
+                    _, mu, _, _ = popt
                     print(f"{sample_label} Sample - Fitted μ for Range {i+1} ({x_range}): μ = {mu}")
 
-                    # Store mu value for dirty (uncleaned) and clean samples
                     if sample_label == "Uncleaned":
                         mu_dirty = mu
                     elif sample_label == "Cleaned":
@@ -96,27 +92,20 @@ def plot_two_spectra_with_selected_dashed_lines(folder_path, ranges, offset=2500
                 except RuntimeError as e:
                     print(f"Error fitting Gaussian derivative for range {i+1} in {sample_label} Sample: {e}")
 
-        # Plot the vertical dashed lines at μ values as specified
+        # Plot the vertical dashed lines
         color = colors[i % len(colors)]
-        if use_dirty_mu_only and mu_dirty is not None:
-            # Plot only the "dirty" sample's mu for Carbon and Oxygen
+        if mu_dirty is not None:
             plt.axvline(mu_dirty, color=color, linestyle='--', linewidth=1.5,
-                        label=labels[i].format(mu_dirty))
-        elif not use_dirty_mu_only:
-            # Plot both "dirty" and "clean" mu values for Aluminum transitions
-            if mu_dirty is not None:
-                plt.axvline(mu_dirty, color=color, linestyle='--', linewidth=1.5,
-                            label=f"Uncleaned {labels[i].format(mu_dirty)}")
-            if mu_clean is not None:
-                plt.axvline(mu_clean, color=color, linestyle='-.', linewidth=1.5,
-                            label=f"Cleaned {labels[i].format(mu_clean)}")
+                        label=f"Uncleaned {labels[i].format(mu_dirty)}")
+        if mu_clean is not None:
+            plt.axvline(mu_clean, color=color, linestyle='-.', linewidth=1.5,
+                        label=f"Cleaned {labels[i].format(mu_clean)}")
 
     # Set plot title and labels
     plt.title("Cleaned and Uncleaned Samples with Gaussian Derivative Peak Positions")
     plt.xlabel("Uncorrected Energy (eV)")
     plt.ylabel("dN/dE (a.u.)")
     plt.legend()
-    #plt.grid()
 
     # Save the plot as a PDF file
     output_file_path = os.path.join(folder_path, "cleaned_uncleaned_peak_positions_selected_plot.pdf")
@@ -128,5 +117,5 @@ def plot_two_spectra_with_selected_dashed_lines(folder_path, ranges, offset=2500
 
 # Example usage:
 folder_path = '.'  # Replace with your actual folder path
-ranges = [(10, 105), (205, 320), (492, 542), (1364, 1385)]  # Specify the four ranges here
+ranges = [(58, 105), (266, 305), (367, 400), (492, 542), (1368, 1385)]  # Updated ranges
 plot_two_spectra_with_selected_dashed_lines(folder_path, ranges)

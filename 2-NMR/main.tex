@@ -96,12 +96,9 @@ mathfontname=mathsf]{mhchem}
 %
 \subsection{What is NMR?}
 
-NMR = Nuclear Magnetic Resonance is phenomenon in which atomic nuclei interact with electromagnetic radiation due to their magnetic dipole. It has applications in material measurement, especially in medecine (MRI machines).
+NMR (Nuclear Magnetic Resonance) is phenomenon in which atomic nuclei interact with electromagnetic radiation due to their magnetic dipole. It has applications in material measurement, especially in medicine with Magnetic Resonance Imaging (MRI machines).
 
-
-\subsection{Why nuclei have spin? Which samples will you measure and what exactly will give you the signal in the experiment?}
-
-From quantum mechanical theory, recall that protons and neutrons have a property called "spin", which behaves like angular momentum. So also the nuclei have spin, namely a spin system composed of protons and neutrons, and the interaction strength of the EM radiation depends on spin (i.e. quantum state) and type of nucleus (element). As a consequence, nuclei with L = 0 (where L is the angular momentum quantum number of the nucleus) do not interact, and are thus "invisible", e.g. $^{12}\text{C}$, $^{16}\text{O}$. % though the underlying mechanism is beyond the scope of this experiment and still poorly understood.
+From quantum mechanical theory, recall that protons and neutrons have a property called "spin", which behaves like angular momentum. Thus the nuclei have spin, namely a spin system composed of protons and neutrons, and the interaction strength of the EM radiation depends on spin (i.e. quantum state) and type of nucleus (element). As a consequence, nuclei with L = 0 (where L is the angular momentum quantum number of the nucleus) do not interact, and are thus "invisible", e.g. $^{12}\text{C}$, $^{16}\text{O}$. % though the underlying mechanism is beyond the scope of this experiment and still poorly understood.
 
 \begin{figure}[h!]
   \centering
@@ -109,9 +106,6 @@ From quantum mechanical theory, recall that protons and neutrons have a property
   \caption{Table illustrating nuclear spins for different elements \cite{mri_questions_nuclear_spin}}
   \label{fig:example}
 \end{figure}
-
-
-\subsection{How do you understand "spin"? What is the gyromagnetic ratio of a proton?}
 
 The gyromagnetic ratio $(\gamma)$ is defined as the ratio of the magnetic moment to the angular momentum.
 
@@ -141,15 +135,17 @@ Larmor procession is procession that will occur by the magnetic moments around t
 
 \[ \omega_L = \gamma B_0\]
 
-(do we need to show the derivation?)
+% (do we need to show the derivation?)
 
-\subsection{ Ensemble of spins. Populations of the spin levels. Macroscopic magnetization vector. Dynamics of the magnetization vector in the external magnetic field.}
+\subsection{ Ensemble of spins.
+% Populations of the spin levels. Macroscopic magnetization vector. Dynamics of the magnetization vector in the external magnetic field.
+}
 
 Without an external magnetic field, the sum of all magnetic moments cancels, and thus no population difference between two spin states can exist (equal distribution of spin up-spin down particles). However, when we introduce an external magnetic field, a difference in the population of two spin states occurs, which results in a net magnetization parallel to the applied field.
 
 The energy difference of states leads to a difference in population
 
-\[\frac{N_{upper}}{N_{lower}} = exp({\frac{-\Delta E}{kT}}) = exp({\frac{-h \nu}{kT}}) = exp({\frac{\gamma h B_0}{2\pi kT}})\]
+\[\frac{N_{upper}}{N_{lower}} = exp({\frac{-\Delta E}{kT}}) = exp({\frac{-h \nu}{kT}}) = \exp({\frac{\gamma h B_0}{2\pi kT}})\]
 
 %Particles in spin pairs will have no contribution to spin. We will call $N$ the number of non-paired particles that are "participating" in our spin ensemble. The distribution of particles in states will follow the Boltzman distribution
 
@@ -162,7 +158,7 @@ Where P, the polarization is defined as
 
 \[P = \frac{N_{\uparrow} - N_{\downarrow}}{N_{\uparrow} + N_{\downarrow}} = \frac{\gamma \hbar B_0}{2kT}\]
 
-Is it necessary to show the derivation here?
+% Is it necessary to show the derivation here?
 
 At $T= 300K$ and $B_0 = 1T$ for protons we have $P = .0000034$ \cite{pirl_youtube_mri}
 \\\
@@ -176,19 +172,20 @@ We define the Boltzmann Magnetization $M_0$ as
 
 \[M_0 = \sum \vec{\mu} \cdot density \cdot P = \frac{N\gamma^2\hbar^2B_0}{4kT} = \chai_0 B_0\]
 
-\subsection { Magnetic resonance: What is resonating?}
+\subsection { Magnetic resonance
+% : What is resonating?
+}
 
 If we apply a B field to a nuclear with magnetic moment that is not already aligned with the field, it will experience Larmor precession. This precession will emit a specific frequency depending on the gyromagnetic ratio and magnitude of the applied B-field, that we can measure. If we apply this perpendicular B-field at the Larmor frequency, we can induce resonance.
 Thus the spinning nuclei will precess with a frequency proportional to the applied magnetic field, i.e.:
 \[\nu_L = \frac{\gamma B_0}{2\pi}\]
 
-\subsection {Rotating frame vs. laboratory frame. Dynamics of the magnetization vector: Blochs equations of motion.}
+\subsection { Reference Frames
+% Rotating frame vs. laboratory frame. Dynamics of the magnetization vector: Blochs equations of motion.
+}
 
-After the nuclei have been pulsed, their magnetic moments proceed in a corkscrew pattern as they process and reconverge around the baseline magnetic field $B_0$. This is easier to describe mathematically in a rotating reference frame centered on a nucleus with rotation rate equal to the Larmor frequency. Here we can just look at the behavior of the components of the nucleus magnetic moment in the $B0$ and $B_1$ directions, as one decays and the other approaches $\mu$
+After the nuclei have been pulsed, their magnetic moments proceed in a corkscrew pattern as they process and reconverge around the baseline magnetic field $B_0$. This is easier to describe mathematically in a rotating reference frame centered on a nucleus with rotation rate equal to the Larmor frequency. Here we can just look at the behavior of the components of the nucleus magnetic moment in the $B_0$ and $B_1$ directions, as one decays and the other approaches $\mu$
 
-\subsection { π/2 pulse. FID (free induction decay) with no relaxation processes. How do we detect an FID from an ensemble of magnetic nuclei? Sketch a setup.}
-
-FID can be observed from the procession of the ensemble of magnetic moments around the applied constant magnetic field $B_0$ when an orthogonal pulse is applied close to the Larmor frequency.
 
 \begin{figure}[h!]
   \centering
@@ -199,7 +196,7 @@ FID can be observed from the procession of the ensemble of magnetic moments arou
 
 
 
-\subsection {Relaxation times. T1 vs. T2 vs. T2*. You should know the differences between them.}
+\subsection {Relaxation times.}
 
 Since we need to observe many nuclei in aggregate to have a measurable effect, the nuclei need to all be precessing in phase. They will randomly become out of phase over time after the aligning pulse has been applied due to each other's magnetic fields, and other non-uniform magnetic fields. This leads to the overall signal strength decaying according to the Free Induction Decay (FID).
 
@@ -243,11 +240,11 @@ Which have solutions
 
 
 
-\subsection{Spin echo. Pulse sequences.}
+\subsection{Spin echo}
 
-Suppose we give a pulse $B_1$. Subsequently we apply another pulse with the same magnitude and opposite direction of $B_1$ at time $\tau$ after the first pulse. All the magnetic moments became out of phase due to inhomogeneities in the constant magnetic field. Assuming these inhomogeneities are constant, this second pulse will reverse the trajectory of all these moments, and will reconverge at their initial configuration from the first pulse after another interval of $\tau$.
+Suppose we give a pulse $B_1$. Subsequently we apply another pulse with the same magnitude and opposite direction of $B_1$ at time $\tau$ after the first pulse. All the magnetic moments became out of phase due to inhomogeneities in the constant magnetic field. Assuming these inhomogeneities are constant, this second pulse will reverse the trajectory of all these moments, and will reconverge at their initial configuration from the first pulse after another interval of $\tau$. This reconvergence is known as the \textbf{spin echo} and will allow us to measure $\tau$ more easily
 
-\subsection{T2 and T2* measurements}
+\subsection{T2 and T2* Measurements (spin-spin relaxation)}
 
 T2* is the decay rate of the signal when we take into account imperfections in the applied fields. A proton has $\gamma = 42.6 MHz/T$, so if we change $B= 1T$ to $B = 1.000001T$ (an error of order $10^{-6}$), this can produce a change of
 
@@ -263,7 +260,7 @@ Assuming our decay is still perfectly exponential with the inhomogeneity, and th
 
 Any magnetic field will have some inhomogeneity, which will put a lower bound on our error no matter how high we raise $T_2$
 
-\subsection{T1 (spin-lattice relaxation time) measurement.}
+\subsection{T1 Measurement (spin-lattice relaxation)}
 
 Spin lattice relaxation time is our T1 relaxation time, spin-spin is our T2 relaxation time.
 
@@ -282,7 +279,8 @@ The PS2-A Synthesizer module is used to produce the oscillating RF signal that "
   \caption{
   blue box - permanent magnet \\
   red box - magnetic field gradients \\
-  green box spectrometer console including rf synthesizer, pulse programmer and receiver unit \\ brown box oscilloscope.\cite{experimental_setup_manual}}
+  green box - spectrometer console including rf synthesizer, pulse programmer and receiver unit \\
+  brown box oscilloscope. \cite{experimental_setup_manual}}
   \label{fig:example}
 \end{figure}
 
@@ -290,19 +288,7 @@ The PS2-A Synthesizer module is used to produce the oscillating RF signal that "
 
 We will determine $T_1$ and $T_2$ for several concentrations of $CuSO_4$ and a light mineral oil by semi-logarithmic representation of the signal amplitudes over the time.
 
-\begin{table}[h!]
-\centering
-\begin{tabular}{|c|c|c|c|c|}
-\hline
- & \textbf{light mineral oil} & \textbf{.05 molar $CuSO_4$} & \textbf{.1 molar $CuSO_4$} & \textbf{.2 molar $CuSO_4$} \\ \hline
-$T_1$ &&  &  & \\ \hline
-$T_2$ &&  &  & \\ \hline
-\end{tabular}
-\caption{Values we will find experimentally}
-\label{tab:example_table}
-\end{table}
-
-\section{Adjusting Parameters}
+\subsection{Adjusting Parameters}
 
 We begin by looking at the FID after applying a $90^o$ pulse, and do the following
 
@@ -467,4 +453,76 @@ Determining $T_1$ is done via the Inversion Recovery method. This consists in ap
   \caption{Inversion Recovery method for the 0.2M $\text{CuSO}_4$ sample.}
   \label{IR_0.2.pdf}
 \end{figure}
+
+\subsection{Some Remarks}
+Table \ref{tab:summary} summarizes all the obtained fit parameters for all these methods. From here, we noticed that there was a good consistency between $T_2$s obtained from the Spin Echo (SE) and Meiboom-Gill (MG) methods, while the Carr-Purcell (CP) method, was less consistent and didn't mostly match. This we believe due to either imperfection on our data, because we used a N = 80 which, although we initially believed to be a wise idea, it may have created more noise in the overall data, which made later fitting more difficult. Moreover, the use of $\tau = 0.0001$ was also probably not a happy choice, since this lead to an overlap between the $\pi$ and $\frac{\pi}{2}$ pulses, which may have somehow biased the data.
+It is to remark though, that these issues did not occur for the MG method, which suggests that other factors may have caused our issues, but may overall point to the realization that MG method is a big improvement over the CP.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{lcccccc}
+\toprule
+\textbf{Method} & \textbf{Parameter} & \textbf{0.05M} & \textbf{0.1M} & \textbf{0.2M} \\
+\midrule
+\multirow{3}{*}{SE} & A (a.u.) & $0.5973 \pm 0.0067$ & $0.4984 \pm 0.0034$ & $0.3865 \pm 0.0062$ \\
+& $T_2$ (s) & $0.0199 \pm 0.0005$ & $0.0101 \pm 0.0002$ & $0.0045 \pm 0.0002$ \\
+& c & $-0.0532 \pm 0.0073$ & $0.0056 \pm 0.0037$ & $0.0243 \pm 0.0068$ \\
+\midrule
+\multirow{3}{*}{CP} & A (a.u.) & $36.7182 \pm 5.5897$ & $9.8308 \pm 2.5204$ & $3.4819 \pm 2.7472$ \\
+& $T_2$ (s) & $0.0024 \pm 0.0001$ & $0.0038 \pm 0.0005$ & $0.0024 \pm 0.0011$ \\
+& C & $0.0151 \pm 0.0067$ & $-0.1985 \pm 0.0505$ & $-0.0005 \pm 0.0919$ \\
+\midrule
+\multirow{3}{*}{MG} & A (a.u.) & $1.9050 \pm 0.0379$ & $5.4768 \pm 0.1263$ & $139.2947 \pm 12.6958$ \\
+& $T_2$ (s) & $0.0186 \pm 0.0005$ & $0.0102 \pm 0.0001$ & $0.0042 \pm 0.0001$ \\
+& C & $0.0103 \pm 0.0073$ & $0.0014 \pm 0.0021$ & $0.0092 \pm 0.0015$ \\
+\midrule
+\multirow{3}{*}{IR} & A (a.u.) & $0.235 \pm 0.014$ & $0.290 \pm 0.007$ & $0.186 \pm 0.005$ \\
+& $T_1$ (s) & $0.022 \pm 0.001$ & $0.011 \pm 0.000$ & $0.005 \pm 0.000$ \\
+\bottomrule
+\end{tabular}
+\caption{Summary of Fit Parameters for Inversion Recovery (IR), Meiboom-Gill (MG), Carr-Purcell (CP), and Spin-Echo (SE) Methods for CuSO$_4$ at Different Concentrations. The C parameters are also shown for completeness, but are not of interest.}
+\label{tab:summary}
+\end{table}
+
+\section{Relaxation Times versus Concentrations}
+The obtained fit parameters for the relaxation times $T_1$ and $T_2$ were then plotted against concentration and fitted for each of the employed methods. The results can be seen in Figure \ref{relaxation_times_vs_concentration.pdf} and Table \ref{tab:prop}. From this, we noticed that there is good consistency between the Spin-Echo (SE) and Meiboom-Gill (MG) methods, which almost coincide, as before, while the CP method diverges, which we attribute to sub-optimal data. In any case, there main trend is a decrease in relaxation time with the concentration increase. The $T_1$ dependency on concentration shows a similar trend.
+
+\begin{figure}[H]
+  \includegraphics[scale = 0.6]{relaxation_times_vs_concentration.pdf}
+  \caption{Relaxation times vs. concentrations for all of the methods.}
+  \label{relaxation_times_vs_concentration.pdf}
+\end{figure}
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{lcccccc}
+\toprule
+\textbf{Method} & \textbf{Parameter} & \textbf{Slope (s/M)} & \textbf{Intercept (s)} \\
+\midrule
+IR & T1 & $-0.1057$ & $0.0240$ \\
+SE & $T_2$ & $-0.0960$ & $0.0223$ \\
+CP & $T_2$ & $-0.0020$ & $0.0033$ \\
+MG & $T_2$ & $-0.0909$ & $0.0195$ \\
+\bottomrule
+\end{tabular}
+\caption{Proportionality Factors for Relaxation Times vs. CuSO₄ Concentration}
+\label{tab:prop}
+\end{table}
+
+\subsection{Proposed Explanation}
+
+In NMR, the longitudinal relaxation time \( T_1 \) generally decreases with increasing concentration due to enhanced spin-spin interactions. As the concentration increases, the number of nearby spins increases, leading to more efficient energy transfer between spins, which accelerates the relaxation process. Additionally, higher concentrations can increase local magnetic field inhomogeneities and alter solvent-solute interactions, further facilitating faster relaxation and thus shorter \( T_1 \) values.
+
+
+\section{Conclusions}
+
+In this report, various techniques were employed to determine the relaxation times $T_1$ and $T_2$ for different concentrations of $\text{CuSO}_4$ using NMR. The Free Induction Decay (FID) measurements were used to extract $T_2^*$, with a noticeable trend where the higher concentration sample exhibited a longer decay time, despite a lower signal amplitude. The calculated magnetic field inhomogeneities, derived from $T_2^*$, were consistent with the expected values for each concentration.
+
+Three methods were used to measure $T_2$: the Spin Echo (SE), Carr-Purcell (CP), and Meiboom-Gill (MG) methods. While there was good consistency between the SE and MG methods, the CP method showed less consistent results, likely due to experimental issues such as the choice of $N = 80$ and a small $\tau$ value. Despite these difficulties, the MG method proved to be the most reliable for measuring $T_2$ in our experiment.
+
+The Inversion Recovery method was employed to determine $T_1$, and the resulting data showed a clear trend of decreasing $T_1$ values with increasing concentration. This is consistent with the expected behavior, as higher concentrations lead to more efficient spin-spin interactions and faster relaxation.
+
+Overall, the obtained relaxation times displayed a clear dependence on concentration, with both $T_1$ and $T_2$ decreasing as concentration increased. This suggests enhanced spin interactions at higher concentrations, which was particularly evident in the measured relaxation times for the different methods used.
+
+\printbibliography[heading=bibintoc]{}
 \end{document}
