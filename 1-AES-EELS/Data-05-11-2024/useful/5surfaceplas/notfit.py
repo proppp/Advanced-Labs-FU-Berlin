@@ -6,15 +6,9 @@ import numpy as np
 
 # Updated peak information with the new manually indicated mu values
 peak_info = [
-    {"name": "Excitation", "mu": 180},
-    {"name": "S1", "mu": 170},
-    {"name": "B1", "mu": 165},
-    {"name": "S2", "mu": 158},
-    {"name": "B2", "mu": 149},
-    {"name": "S3", "mu": 141.5},
-    {"name": "B3", "mu": 134},
-    {"name": "S4", "mu": 124},
-    {"name": "B4", "mu": 114}
+    {"name": "Excitation", "mu": 175, "range": (174, 180)},
+    {"name": "S1", "mu": 164.26, "range": (163, 168)},
+    {"name": "B1", "mu": 159.33, "range": (156, 162)},
 ]
 
 # Shift value to add to all energy values (0, as per the request)
@@ -48,7 +42,7 @@ def plot_plasmons(file_path):
         plt.title("Data for Al Surface and Bulk Plasmons")
         plt.xlabel("Corrected Energy (eV)")
         plt.ylabel("dN/dE (a.u.)")
-        #plt.grid()
+        # plt.grid(True)  # Optional grid for better readability
 
         # List of colors for the vertical lines
         colors = ['r', 'g', 'purple', 'orange', 'cyan', 'magenta', 'brown', 'pink', 'blue']
@@ -70,13 +64,14 @@ def plot_plasmons(file_path):
             print(f"Distance between {peak_info[j-1]['name']} and {peak_info[j]['name']}: {distance:.2f} eV")
 
             # Draw arrows between consecutive mu values
-            plt.annotate('', xy=(mu_values[j], max(df['Y'])), xytext=(mu_values[j - 1], max(df['Y'])),
+            arrow_y = df['Y'].max() * 1.0  # Position arrows slightly above the highest Y value
+            plt.annotate('', xy=(mu_values[j], arrow_y), xytext=(mu_values[j - 1], arrow_y),
                          arrowprops=dict(arrowstyle='<->', color='black', lw=1.5))
 
             # Annotate the distance along the arrow
             mid_point = (mu_values[j] + mu_values[j - 1]) / 2
-            vertical_offset = df['Y'].max() * 0.2 +8000  # Adjust the offset for annotation
-            plt.text(mid_point, vertical_offset, f"{distance:.0f} eV", color='black', ha='center', va='bottom')
+            vertical_offset = arrow_y * 1.05 - 300   # Slightly above the arrow
+            plt.text(mid_point, vertical_offset, f"{distance:.2f} eV", color='black', ha='center', va='bottom')
 
         plt.legend()  # Ensure the legend is added after the lines are plotted
 
@@ -91,5 +86,5 @@ def plot_plasmons(file_path):
         print(f"No valid data found in {file_path}.")
 
 # Example usage:
-file_path = './surfaceplasmons_30uV_156deg_300ms_1.9e-09mbar_200eV.txt'  # Replace with your actual file path
+file_path = '11Uhr39_FP_AES.txt'  # Replace with your actual file path
 plot_plasmons(file_path)

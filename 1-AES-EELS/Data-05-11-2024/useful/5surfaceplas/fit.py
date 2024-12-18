@@ -11,12 +11,9 @@ def gaussian_derivative_with_baseline(x, A, mu, sigma, C):
 
 # Updated peak information with the new ranges
 peak_info = [
-    {"name": "Excitation", "initial_mu": 205, "range": (200, 211)},
-    {"name": "S1", "initial_mu": 194, "range": (192, 196)},
-    {"name": "B1", "initial_mu": 187, "range": (183, 189)},
-    {"name": "B2", "initial_mu": 171, "range": (165, 174)},
-    {"name": "B3", "initial_mu": 153, "range": (150, 156)},
-    {"name": "B4", "initial_mu": 134.5, "range": (135, 140)},  # Kept as it is
+    {"name": "Excitation", "initial_mu": 171, "range": (174, 180)},
+    {"name": "S1", "initial_mu": 162, "range": (163, 168)},
+    {"name": "B1", "initial_mu": 156, "range": (156, 162)},
 ]
 # Shift value to add to all energy values (15.74 eV)
 shift_value = 0
@@ -138,5 +135,5 @@ def fit_al_kll_peaks_with_baseline(file_path):
         print(f"No valid data found in {file_path}.")
 
 # Example usage:
-file_path = './surface3.txt'  # Replace with your actual file path
+file_path = '11Uhr39_FP_AES.txt'  # Replace with your actual file path
 fit_al_kll_peaks_with_baseline(file_path)
