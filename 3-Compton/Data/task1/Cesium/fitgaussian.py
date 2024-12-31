@@ -106,90 +106,58 @@ def find_and_fit_peaks(channels, counts, search_ranges):
 
     return fitted_params, peak_positions
 
-
-def plot_merged_spectra_with_peaks(folder_path, settings, material_names):
+def plot_spectra_with_peaks(folder_path, settings, material_names):
     """
-    Reads spectrum files from two detectors for the same material, scales data, finds peaks, and plots them together.
+    Reads spectrum files, scales data, finds peaks as per settings, and plots spectra.
     :param folder_path: Path to the folder containing spectrum files.
     :param settings: Dictionary with file-specific settings for peaks and ranges.
     :param material_names: Dictionary mapping file names to material names for plot titles.
     """
-    # Organize files by material (based on shared suffix after detector)
-    material_files = {}
-    for file in os.listdir(folder_path):
-        if not os.path.isfile(os.path.join(folder_path, file)):
-            continue
-        # Extract the material key (file name without "detector1_" or "detector2_")
-        if file.startswith("detector1_"):
-            key = file.replace("detector1_", "")
-        elif file.startswith("detector2_"):
-            key = file.replace("detector2_", "")
-        else:
-            continue
-        material_files.setdefault(key, []).append(file)
+    files = [f for f in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, f))]
 
-    # Process each material
-    for material_key, files in material_files.items():
-        detector1_file = next((f for f in files if f.startswith("detector1_")), None)
-        detector2_file = next((f for f in files if f.startswith("detector2_")), None)
-
-        if not detector1_file or not detector2_file:
-            print(f"Skipping {material_key}: Missing files for both detectors.")
+    for file in files:
+        file_path = os.path.join(folder_path, file)
+        if file not in settings:
+            print(f"Skipping file {file}, no settings found.")
             continue
+
+        search_ranges = settings[file]["search_ranges"]
+
+        # Get the material name for the title
+        material_name = material_names.get(file, file)  # Default to file name if no material name found
 
         try:
-            # Parse the spectra for both detectors
-            detector1_path = os.path.join(folder_path, detector1_file)
-            detector2_path = os.path.join(folder_path, detector2_file)
+            channels, scaled_counts, avg_time = parse_spectrum_file(file_path)
+            print(f"File: {file}, Average Time (seconds): {avg_time}")
 
-            channels1, scaled_counts1, _ = parse_spectrum_file(detector1_path)
-            channels2, scaled_counts2, _ = parse_spectrum_file(detector2_path)
+            # Find and fit peaks
+            fitted_params, peak_positions = find_and_fit_peaks(channels, scaled_counts, search_ranges)
+            print(f"File: {file}, Peak Positions: {peak_positions}")
 
-            # Find peaks and fit Gaussians for both detectors
-            search_ranges = settings.get(detector1_file, {}).get("search_ranges", [])
-            fitted_params1, peak_positions1 = find_and_fit_peaks(channels1, scaled_counts1, search_ranges)
-            fitted_params2, peak_positions2 = find_and_fit_peaks(channels2, scaled_counts2, search_ranges)
+            # Plot the spectrum
+            plt.figure(figsize=(10, 6))
+            plt.plot(channels, scaled_counts, label="Spectrum", color='blue')
 
-            # Material name for the title
-            material_name = material_names.get(detector1_file, material_key)
-
-            # Create the plot
-            plt.figure(figsize=(10, 10))
-
-            # Plot Detector 1 spectrum
-            plt.subplot(2, 1, 1)
-            plt.plot(channels1, scaled_counts1, label="Spectrum (Detector 1)", color="blue")
-            for params in fitted_params1:
-                x_fit = np.linspace(min(channels1), max(channels1), 1000)
+            # Plot the fitted Gaussians
+            for params in fitted_params:
+                x_fit = np.linspace(min(channels), max(channels), 1000)
                 y_fit = gaussian(x_fit, *params)
-                plt.plot(x_fit, y_fit, label=f"Gaussian (center={params[1]:.1f})", linestyle="--")
-            plt.title(f"Spectrum of {material_name} (Detectors 1 & 2), Channel vs. C.P.S.", fontsize=14)
-            plt.ylabel("C.P.S.", fontsize=14)
+                plt.plot(x_fit, y_fit, label=f"Gaussian (center={params[1]:.1f})", linestyle='--')
+
+            # Mark the peaks
+            for peak in peak_positions:
+                plt.axvline(peak, color='red', linestyle=':', label=f"Peak @ {peak:.1f}")
+
+            # Set the plot title using the material name in LaTeX
+            plt.title(f"Spectrum of {material_name}, {file.split('_')[0]}", fontsize=16)
+            plt.xlabel("Channel", fontsize=14)
+            plt.ylabel("Scaled Counts (Counts per Second)", fontsize=14)
             plt.legend()
             plt.grid()
-
-            # Plot Detector 2 spectrum
-            plt.subplot(2, 1, 2)
-            plt.plot(channels2, scaled_counts2, label="Spectrum (Detector 2)", color="green")
-            for params in fitted_params2:
-                x_fit = np.linspace(min(channels2), max(channels2), 1000)
-                y_fit = gaussian(x_fit, *params)
-                plt.plot(x_fit, y_fit, label=f"Gaussian (center={params[1]:.1f})", linestyle="--")
-            #plt.title(f"Spectrum of {material_name} (Detector 2)", fontsize=16)
-            plt.xlabel("Channnel", fontsize=8)
-            plt.ylabel("C.P.S", fontsize=14)
-            plt.legend()
-            plt.grid()
-
-            plt.tight_layout()
             plt.show()
-
         except Exception as e:
-            print(f"Error processing material {material_key}: {e}")
+            print(f"Error processing file {file}: {e}")
 
-
-# Replace 'your_folder_path_here' with the path to your folder containing the spectrum files
-#plot_merged_spectra_with_peaks(folder_path, settings, material_names)
 # Define settings for each file
 settings = {
     "detector1_Na22.Spe": {"search_ranges": [(500, 1000), (1300, 2000)]},
@@ -219,4 +187,4 @@ material_names = {
 
 # Replace 'your_folder_path_here' with the path to your folder containing the spectrum files
 folder_path = "."
-plot_merged_spectra_with_peaks(folder_path, settings, material_names)
+plot_spectra_with_peaks(folder_path, settings, material_names)
