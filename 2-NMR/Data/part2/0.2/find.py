@@ -99,7 +99,7 @@ try:
     y_fit_curve = fit_function(x_fit, *popt)
 
     # Create the label with fit parameters, uncertainties, and RMSE
-    label_text = f"Fit: A={A:.3f} ± {A_error:.3f}, T_1={T_1:.3f} ± {T_1_error:.3f}"
+    label_text = f"Fit: A={A:.3f} ± {A_error:.2e}, T_1={T_1:.3f} ± {T_1_error:.2e}"
 
     # Plot the fitted function
     plt.plot(x_fit, y_fit_curve, color='purple', label=label_text)

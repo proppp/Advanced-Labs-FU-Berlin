@@ -101,7 +101,7 @@ if len(all_x) > 0:
         y_fitted = exp_decay(x_fit, *popt)
 
         # Plot the fitted exponential curve
-        plt.plot(x_fit, y_fitted, color='red', label=f'Exp Fit: A={A:.3f}±{A_err:.3f}, T0={T0:.5f}±{T0_err:.5f}', linestyle='--', linewidth=2)
+        plt.plot(x_fit, y_fitted, color='red', label=f'Exp Fit: A={A:.2e}±{A_err:.2e}, T0={T0:.2e}±{T0_err:.2e}', linestyle='--', linewidth=2)
     except RuntimeError:
         print("Could not fit an exponential to the data.")
 
