@@ -44,8 +44,8 @@ plt.plot(power_second, fit_line_2, label=(
 ), color='m')
 
 plt.title("Quadratic Fit of Power-Power Data")
-plt.xlabel("Nd:YAG Laser Power [mW]")
-plt.ylabel("Diode Laser Power [mW]")
+plt.ylabel("Nd:YAG Laser Power [mW]")
+plt.xlabel("Diode Laser Power [mW]")
 plt.grid(True)
 plt.legend()
 plt.savefig("quadratic_power_fit.pdf")
