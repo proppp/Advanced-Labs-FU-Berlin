@@ -15,7 +15,8 @@ def hermite_gaussian_2d(x, y, n, m, sx, sy, cx, cy, sigma=1.0):
 
     # Hermite-Gaussian mode (product of Gaussian envelope and Hermite polynomials)
     gauss = np.exp(-(x - cx)**2 / (2 * sx**2)) * np.exp(-(y - cy)**2 / (2 * sy**2))
-    return Hn * Hm * gauss
+    rtn = Hn * Hm * gauss
+    return rtn ** 2
 
 # Fit function with scale & shift
 def fit_function(coords, *params):
@@ -72,7 +73,8 @@ def fit_hermite_gaussian(image, n, m):
     y = np.linspace(-1, 1, ny)
     X, Y = np.meshgrid(x, y)
 
-    sx, sy, cx, cy = estimate_scale_and_shift(image)
+    # sx, sy, cx, cy = estimate_scale_and_shift(image)
+    sx, sy, cx, cy = 
 
     initial_guess = np.ones((n + 1) * (m + 1))  
     initial_guess = np.append(initial_guess, [sx, sy, cx, cy])
