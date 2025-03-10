@@ -12,10 +12,13 @@ data = np.loadtxt("CP_0.0002s.dat")  # Update with the actual file path
 x = data[:, 0]  # Time (x-axis)
 y = data[:, 1]  # Amplitude (y-axis)
 
+# Shift all data vertically by 0.03
+y_shifted = y - 1.03
+
 # Define the initial mask to include all data
 mask = x >= np.min(x)  # Mask the data to include the full range initially
 x_filtered = x[mask]
-y_filtered = y[mask]
+y_filtered = y_shifted[mask]  # Use the shifted y-values
 
 # Find initial peaks (this step happens only once)
 peaks, _ = find_peaks(y_filtered, prominence=0.01)  # Initial prominence
@@ -33,9 +36,9 @@ ax.legend()
 # Store which peaks are selected/deselected
 selected = []
 
-# Exponential fit function: A * e^(-t/T_2) + C
-def exp_decay(x, A, T_2, C):
-    return A * np.exp(-x / T_2) + C
+# Exponential fit function: A * e^(-t/T_2)
+def exp_decay(x, A, T_2):
+    return A * np.exp(-x / T_2)
 
 # Perform the fitting and save selected peaks to a text file
 def fit_and_save_peaks():
@@ -44,28 +47,27 @@ def fit_and_save_peaks():
         valid_x = x_filtered[selected_peaks]
         valid_y = y_filtered[selected_peaks]
 
-        # Perform exponential decay fit with initial guesses for A, T_2, and C
-        popt, pcov = curve_fit(exp_decay, valid_x, valid_y, p0=(1, 0.1, 0))
+        # Perform exponential decay fit with initial guesses for A and T_2
+        popt, pcov = curve_fit(exp_decay, valid_x, valid_y, p0=(139, 0.0092))
 
         # Extract fitting parameters and their uncertainties
-        A, T_2, C = popt
+        A, T_2 = popt
         perr = np.sqrt(np.diag(pcov))  # Uncertainties of the parameters
-        A_err, T_2_err, C_err = perr
+        A_err, T_2_err = perr
 
         # Print the fit parameters with uncertainties
-        print(f"Fit parameters: A = {A:.4f} ± {A_err:.4f}, T_2 = {T_2:.4f} ± {T_2_err:.4f}, C = {C:.4f} ± {C_err:.4f}")
+        print(f"Fit parameters: A = {A:.4f} ± {A_err:.4f}, T_2 = {T_2:.4f} ± {T_2_err:.2e}")
 
         # Generate smooth x values for plotting the fit
         x_fit = np.linspace(valid_x.min(), valid_x.max(), 500)
         y_fit = exp_decay(x_fit, *popt)
 
         # Plot the exponential fit and pass the parameters to the plot function
-        ax.plot(x_fit, y_fit, color='black', label=f'Fit: A={A:.4f}±{A_err:.4f}, T2={T_2:.4f}±{T_2_err:.4f}, C={C:.4f}±{C_err:.4f}')
+        ax.plot(x_fit, y_fit, color='black', label=f'Fit: A={A:.4f}±{A_err:.4f}, T2={T_2:.4f}±{T_2_err:.2e}')
 
         # Add the fitting parameters to the plot as text
         fit_text = (f"A = {A:.4f} ± {A_err:.4f}\n"
-                    f"T2 = {T_2:.4f} ± {T_2_err:.4f}\n"
-                    f"C = {C:.4f} ± {C_err:.4f}")
+                    f"T2 = {T_2:.4f} ± {T_2_err:.4f}")
         ax.text(0.05, 0.95, fit_text, transform=ax.transAxes, fontsize=12,
                 verticalalignment='top', bbox=dict(facecolor='white', alpha=0.5))
 
@@ -76,14 +78,14 @@ def fit_and_save_peaks():
         fig.canvas.draw()
 
         # New plot showing the selected peaks and the fitting function
-        plot_selected_peaks_and_fit(valid_x, valid_y, x_fit, y_fit, A, T_2, C, A_err, T_2_err, C_err)
+        plot_selected_peaks_and_fit(valid_x, valid_y, x_fit, y_fit, A, T_2, A_err, T_2_err)
 
         # Save the final plot as a PDF
         plt.savefig("selected_peaks_and_fit.pdf", format="pdf")
         print("Plot saved as 'selected_peaks_and_fit.pdf'.")
 
 # Plot the selected peaks and the fitted function
-def plot_selected_peaks_and_fit(valid_x, valid_y, x_fit, y_fit, A, T_2, C, A_err, T_2_err, C_err):
+def plot_selected_peaks_and_fit(valid_x, valid_y, x_fit, y_fit, A, T_2, A_err, T_2_err):
     # Create a new plot for the selected peaks and the exponential fit
     plt.figure(figsize=(10, 6))
 
@@ -94,7 +96,7 @@ def plot_selected_peaks_and_fit(valid_x, valid_y, x_fit, y_fit, A, T_2, C, A_err
     plt.scatter(valid_x, valid_y, color='red', marker='x', label='Selected Peaks')
 
     # Plot the exponential fit and include the parameters in the label
-    plt.plot(x_fit, y_fit, color='black', label=f'Fit: A={A:.4f}±{A_err:.4f}, T2={T_2:.4f}±{T_2_err:.4f}, C={C:.4f}±{C_err:.4f}')
+    plt.plot(x_fit, y_fit, color='black', label=f'Fit: A={A:.4f}±{A_err:.4f}, T2={T_2:.4f}±{T_2_err:.4e}')
 
     # Customize the plot
     plt.xlabel("Time (s)")

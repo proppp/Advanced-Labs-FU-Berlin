@@ -14,19 +14,20 @@ power_1064 = np.array([24.88, 23.21, 21.3, 19.6, 17.92, 16.08, 14.09, 12.4, 10.8
                        6.93, 5.3, 3.76, 5.1, 1.428, 0.0974, 0.00123])
 
 # Parameters
-T = 1.0  # Transmission coefficient set to 100% (1.0)
+T_532 = 1  # Transmission coefficient set to 100% (1.0)
+T_1064 = 0.02  # Transmission coefficient set to 100% (1.0)
 L = 0.05  # Loss L = 5%
 
 # Compute efficiencies for L = 5% and T = 100%
-Pcav_1064 = power_1064 / (T * (1 - L))
-Pcav_532_1 = power_532_1 / (T * (1 - L))
-Pcav_532_2 = power_532_2 / (T * (1 - L))
+Pcav_1064 = power_1064 / (T_1064 * (1 - L))
+Pcav_532_1 = power_532_1 / (T_532 * (1 - L))
+Pcav_532_2 = power_532_2 / (T_532 * (1 - L))
 
 efficiency_1 = Pcav_532_1 / Pcav_1064
 efficiency_2 = Pcav_532_2 / Pcav_1064
 
 # Define uncertainties (5%)
-uncertainty_percentage = 0.005
+uncertainty_percentage = 0
 power_second_error = power_second * uncertainty_percentage
 power_532_1_error = power_532_1 * uncertainty_percentage
 power_532_2_error = power_532_2 * uncertainty_percentage

@@ -13,9 +13,9 @@ calibration_prominence = 0.1  # Prominence for finding the first peak to align t
 # Peak marking parameters
 peak_prominence = 0.01  # You can adjust this value for marking peaks
 
-# New exponential fit function: A * e^(-t/T_2) + c
-def exp_decay(t, A, T_2, c):
-    return A * np.exp(-t / T_2) + c
+# New exponential fit function: A * e^(-t/T_2)
+def exp_decay(t, A, T_2):
+    return A * np.exp(-t / T_2)
 
 # Plot settings
 plt.figure(figsize=(10, 6))  # Create a larger figure for better visualization
@@ -80,7 +80,7 @@ if len(global_x) >= 3:  # Ensure enough points for fitting
     global_y = np.array(global_y)
 
     # Perform the curve fit with the new fitting function
-    popt, pcov = curve_fit(exp_decay, global_x, global_y, p0=(1, 1, 0))
+    popt, pcov = curve_fit(exp_decay, global_x, global_y, p0=(0.5, 0.01))
 
     # Calculate the standard deviations (errors) of the fit parameters
     perr = np.sqrt(np.diag(pcov))  # Standard errors from the covariance matrix
@@ -90,8 +90,8 @@ if len(global_x) >= 3:  # Ensure enough points for fitting
     y_fit = exp_decay(x_fit, *popt)
 
     # Plot the exponential fit
-    plt.plot(x_fit, y_fit, color='black', label=f'Exp Fit: A={popt[0]:.4f}±{perr[0]:.4f}, T_2={popt[1]:.4f}±{perr[1]:.4f}, c={popt[2]:.4f}±{perr[2]:.4f}')
-    print(f"Fitted parameters: A={popt[0]:.4f} ± {perr[0]:.4f}, T_2={popt[1]:.4f} ± {perr[1]:.4f}, c={popt[2]:.4f} ± {perr[2]:.4f}")
+    plt.plot(x_fit, y_fit, color='black', label=f'Exp Fit: A={popt[0]:.4f}±{perr[0]:.4f}, T_2={popt[1]:.4f}±{perr[1]:.4f}')
+    print(f"Fitted parameters: A={popt[0]:.4f} ± {perr[0]:.4f}, T_2={popt[1]:.4f} ± {perr[1]:.4f}")
 else:
     print("Not enough points for fitting across all files.")
 
