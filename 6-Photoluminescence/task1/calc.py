@@ -4,22 +4,20 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # File paths
-dlf_file = 'dlf.txt'
-water_background_file = 'waterbackground.txt'
-dlf_file = 'dlf.csv'
-water_background_file = 'waterbackground.csv'
-
-
+dlf_file = 'PLEMapOfTheMolecule.csv'
+water_background_file = 'PLEMapOfTheBlank.csv'
+# File paths
+calib_file = 'calib.csv'
 
 # Load the data
-dlf_data = np.genfromtxt(dlf_file, delimiter=';', skip_header=1)
-water_background_data = np.genfromtxt(water_background_file, delimiter=';', skip_header=1)
+dlf_data = np.genfromtxt(dlf_file, delimiter=',', skip_header=1)
+water_background_data = np.genfromtxt(water_background_file, delimiter=',', skip_header=1)
 
 # Extract the x and y wavelengths
-wavelengths_x_full = np.genfromtxt(dlf_file, delimiter=';', max_rows=1)[1:]  # Full Emission Wavelengths
-wavelengths_y = np.genfromtxt(dlf_file, delimiter=';', skip_header=1, usecols=0)  # Excitation Wavelengths
+wavelengths_x_full = np.genfromtxt(dlf_file, delimiter=',', max_rows=1)[1:]  # Full Emission Wavelengths
+wavelengths_y = np.genfromtxt(dlf_file, delimiter=',', skip_header=1, usecols=0)  # Excitation Wavelengths
 
-wavelengths_x_bg = np.genfromtxt(water_background_file, delimiter=';', max_rows=1)[1:]  # Background Emission Wavelengths
+wavelengths_x_bg = np.genfromtxt(water_background_file, delimiter=',', max_rows=1)[1:]  # Background Emission Wavelengths
 
 # Convert to matrices
 dlf_matrix = dlf_data[:, 1:]  # Exclude first column (excitation wavelengths)
