@@ -149,11 +149,17 @@ def plot_all_spectra_with_fits(folder_path, fitting_ranges):
             channels, scaled_counts, _ = parse_spectrum_file(file_path)
             energies = calibrate_channels_to_energy(channels)
             plt.plot(energies, scaled_counts, label=f"Spectrum: {file_name}", alpha=0.45)
-
+	    sigma = params[2]
+            fwhm = 2.355 * sigma
             # Fit Gaussian and overlay
             params, fit_energies, _ = fit_gaussian_to_spectrum(file_path, fit_range)
             fit_counts = gaussian(fit_energies, *params)
-            plt.plot(fit_energies, fit_counts, linestyle='--', label=f"Fit: {file_name}\nCenter={params[1]:.2f} keV", alpha=1)
+	    plt.plot(
+		    fit_energies, fit_counts, linestyle='--', 
+		    label=f"Fit: {file_name}\nCenter={params[1]:.2f} keV\nFWHM={fwhm:.2f} keV", 
+		    alpha=1
+		)
+           # plt.plot(fit_energies, fit_counts, linestyle='--', label=f"Fit: {file_name}\nCenter={params[1]:.2f} keV", alpha=1)
 
         except Exception as e:
             print(f"Error processing {file_name}: {e}")
