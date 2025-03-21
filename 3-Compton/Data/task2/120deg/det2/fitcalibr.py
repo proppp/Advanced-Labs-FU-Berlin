@@ -13,11 +13,7 @@ def gaussian(x, a, x0, sigma):
     return a * np.exp(-(x - x0) ** 2 / (2 * sigma ** 2))
 
 def parse_spectrum_file(filepath):
-    """
-    Parses a spectrum file to extract the spectrum data and measurement time.
-    :param filepath: Path to the spectrum file.
-    :return: (list of channels, list of scaled counts, average time in seconds)
-    """
+    """Parses a spectrum file to extract the spectrum data and measurement time."""
     channels = []
     counts = []
     measurement_time = None
@@ -64,20 +60,11 @@ def parse_spectrum_file(filepath):
     return channels, scaled_counts, measurement_time
 
 def calibrate_channels_to_energy(channels):
-    """
-    Calibrates the channel numbers to energy values (keV) using the linear calibration function.
-    :param channels: List of channel numbers.
-    :return: List of energy values in keV.
-    """
+    """Calibrates the channel numbers to energy values (keV) using the linear calibration function."""
     return [m * channel + b for channel in channels]
 
 def fit_gaussian_to_spectrum(file_path, fit_range):
-    """
-    Fits a Gaussian to the spectrum data within a specified energy range.
-    :param file_path: Path to the spectrum file.
-    :param fit_range: Tuple specifying the energy range for Gaussian fitting (start, end).
-    :return: Fitted Gaussian parameters (a, x0, sigma).
-    """
+    """Fits a Gaussian to the spectrum data within a specified energy range."""
     channels, scaled_counts, _ = parse_spectrum_file(file_path)
     energies = calibrate_channels_to_energy(channels)
 
@@ -98,45 +85,7 @@ def fit_gaussian_to_spectrum(file_path, fit_range):
     return params, fit_energies, fit_counts
 
 def plot_all_spectra_with_fits(folder_path, fitting_ranges):
-    """
-    Plots all spectra and their Gaussian fits together in a single plot.
-    :param folder_path: Path to the folder containing spectrum files.
-    :param fitting_ranges: Dictionary of file names and their fitting ranges.
-    """
-    plt.figure(figsize=(12, 8))
-
-    for file_name, fit_range in fitting_ranges.items():
-        try:
-            file_path = os.path.join(folder_path, file_name)
-            print(f"Processing file: {file_name} with fit range: {fit_range}")
-
-            # Parse and calibrate spectrum
-            channels, scaled_counts, _ = parse_spectrum_file(file_path)
-            energies = calibrate_channels_to_energy(channels)
-            plt.plot(energies, scaled_counts, label=f"Spectrum: {file_name}")
-
-            # Fit Gaussian and overlay
-            params, fit_energies, _ = fit_gaussian_to_spectrum(file_path, fit_range)
-            fit_counts = gaussian(fit_energies, *params)
-            plt.plot(fit_energies, fit_counts, linestyle='--', label=f"Fit: {file_name}\nCenter={params[1]:.2f} keV")
-
-        except Exception as e:
-            print(f"Error processing {file_name}: {e}")
-
-    plt.title("Spectra and Gaussian Fits")
-    plt.xlabel("Energy (keV)")
-    plt.ylabel("Scaled Counts (Counts per Second)")
-    plt.legend()
-    plt.grid()
-    plt.show()
-
-
-def plot_all_spectra_with_fits(folder_path, fitting_ranges):
-    """
-    Plots all spectra and their Gaussian fits together in a single plot, restricts range to 1000 keV, and saves as PDF.
-    :param folder_path: Path to the folder containing spectrum files.
-    :param fitting_ranges: Dictionary of file names and their fitting ranges.
-    """
+    """Plots all spectra with Gaussian fits, including FWHM in the legend."""
     plt.figure(figsize=(12, 8))
 
     for file_name, fit_range in fitting_ranges.items():
@@ -152,29 +101,32 @@ def plot_all_spectra_with_fits(folder_path, fitting_ranges):
             # Fit Gaussian and overlay
             params, fit_energies, _ = fit_gaussian_to_spectrum(file_path, fit_range)
             fit_counts = gaussian(fit_energies, *params)
-            plt.plot(fit_energies, fit_counts, linestyle='--', label=f"Fit: {file_name}\nCenter={params[1]:.2f} keV", alpha=1)
+            sigma = params[2]
+            fwhm = 2.355 * sigma  # Calculate FWHM
+
+            plt.plot(fit_energies, fit_counts, linestyle='--',
+                     label=f"Fit: {file_name}\nCenter={params[1]:.2f} keV, FWHM={fwhm:.2f} keV", alpha=1)
 
         except Exception as e:
             print(f"Error processing {file_name}: {e}")
 
     # Limit x-axis range to 0–1000 keV
-    plt.xlim(0, 1400)
+    plt.xlim(0, 1100)
 
     # Add titles, labels, and grid
-    plt.title("Emitted Electron Spectra and Gaussian Fits")
+    plt.title("Spectra and Gaussian Fits with FWHM")
     plt.xlabel("Energy (keV)")
     plt.ylabel("Scaled Counts (Counts per Second)")
     plt.legend()
     plt.grid()
 
     # Save plot as a PDF
-    output_filename = "spectra_fits_60deg.pdf"
+    output_filename = "spectra_fits_with_FWHM.pdf"
     plt.savefig(output_filename)
     print(f"Plot saved as {output_filename}")
 
     # Display the plot
     plt.show()
-
 
 # Specify the folder path and fitting ranges for each file
 folder_path = "."
@@ -183,5 +135,7 @@ fitting_ranges = {
     "Na 120deg cut below": (700, 1300)  # Example range in keV
 }
 
-# Plot all spectra and their Gaussian fits together
+
+
+# Plot all spectra with Gaussian fits and FWHM in the legend
 plot_all_spectra_with_fits(folder_path, fitting_ranges)

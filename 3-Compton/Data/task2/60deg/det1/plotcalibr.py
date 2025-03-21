@@ -1,5 +1,6 @@
 
 import os
+import numpy as np
 import matplotlib.pyplot as plt
 
 # Calibration constants
@@ -9,8 +10,6 @@ b = -48.806 # Intercept in keV
 def parse_spectrum_file(filepath):
     """
     Parses a spectrum file to extract the spectrum data and measurement time.
-    :param filepath: Path to the spectrum file.
-    :return: (list of channels, list of scaled counts, average time in seconds)
     """
     channels = []
     counts = []
@@ -41,7 +40,6 @@ def parse_spectrum_file(filepath):
             # Process data lines
             if in_data_section:
                 if len(channels) == 0:
-                    # First line in $DATA: gives channel range
                     try:
                         start, end = map(int, line.split())
                         channels = list(range(start, end + 1))
@@ -55,20 +53,35 @@ def parse_spectrum_file(filepath):
 
     # Scale counts by the measurement time
     scaled_counts = [count / measurement_time for count in counts]
-    return channels, scaled_counts, measurement_time
+    return channels, scaled_counts
 
 def calibrate_channels_to_energy(channels):
     """
-    Calibrates the channel numbers to energy values (keV) using the linear calibration function.
-    :param channels: List of channel numbers.
-    :return: List of energy values in keV.
+    Converts channel numbers to energy values (keV) using a linear calibration function.
     """
     return [m * channel + b for channel in channels]
 
+def find_fwhm(energies, counts):
+    """
+    Calculates the Full Width at Half Maximum (FWHM) of the spectrum.
+    """
+    max_count = max(counts)
+    half_max = max_count / 2
+
+    # Find indices where counts cross half maximum
+    above_half_max = np.where(np.array(counts) >= half_max)[0]
+
+    if len(above_half_max) < 2:
+        return None  # FWHM not found
+
+    # Get corresponding energy values
+    e_min, e_max = energies[above_half_max[0]], energies[above_half_max[-1]]
+
+    return e_max - e_min
+
 def plot_spectra_in_folder(folder_path):
     """
-    Reads all spectrum files in a folder, scales their data, calibrates the energy, and plots their spectra.
-    :param folder_path: Path to the folder containing spectrum files.
+    Reads spectrum files in a folder, calibrates the energy, and plots their spectra.
     """
     files = [f for f in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, f))]
 
@@ -77,18 +90,18 @@ def plot_spectra_in_folder(folder_path):
     for file in files:
         file_path = os.path.join(folder_path, file)
         try:
-            channels, scaled_counts, avg_time = parse_spectrum_file(file_path)
-            print(f"File: {file}, Average Time (seconds): {avg_time}")
-
-            # Calibrate the channels to energy
+            channels, scaled_counts = parse_spectrum_file(file_path)
             energies = calibrate_channels_to_energy(channels)
+            fwhm = find_fwhm(energies, scaled_counts)
 
-            # Plot the calibrated spectrum
-            plt.plot(energies, scaled_counts, label=file)
+            # Format legend entry
+            legend_label = f"{file} (FWHM: {fwhm:.2f} keV)" if fwhm else file
+
+            plt.plot(energies, scaled_counts, label=legend_label)
         except Exception as e:
             print(f"Error processing file {file}: {e}")
 
-    plt.title("Scaled and Calibrated Spectra from Folder")
+    plt.title("Scaled and Calibrated Spectra with FWHM")
     plt.xlabel("Energy (keV)")
     plt.ylabel("Scaled Counts (Counts per Second)")
     plt.legend()
