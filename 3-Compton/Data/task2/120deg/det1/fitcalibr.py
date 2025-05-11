@@ -104,8 +104,50 @@ def plot_all_spectra_with_fits(folder_path, fitting_ranges):
             sigma = params[2]
             fwhm = 2.355 * sigma  # Calculate FWHM
 
+<<<<<<< HEAD
             plt.plot(fit_energies, fit_counts, linestyle='--',
                      label=f"Fit: {file_name}\nCenter={params[1]:.2f} keV, FWHM={fwhm:.2f} keV", alpha=1)
+=======
+        except Exception as e:
+            print(f"Error processing {file_name}: {e}")
+
+    plt.title("Spectra and Gaussian Fits")
+    plt.xlabel("Energy (keV)")
+    plt.ylabel("Scaled Counts (Counts per Second)")
+    plt.legend()
+    plt.grid()
+    plt.show()
+
+
+def plot_all_spectra_with_fits(folder_path, fitting_ranges):
+    """
+    Plots all spectra and their Gaussian fits together in a single plot, restricts range to 1000 keV, and saves as PDF.
+    :param folder_path: Path to the folder containing spectrum files.
+    :param fitting_ranges: Dictionary of file names and their fitting ranges.
+    """
+    plt.figure(figsize=(12, 8))
+
+    for file_name, fit_range in fitting_ranges.items():
+        try:
+            file_path = os.path.join(folder_path, file_name)
+            print(f"Processing file: {file_name} with fit range: {fit_range}")
+
+            # Parse and calibrate spectrum
+            channels, scaled_counts, _ = parse_spectrum_file(file_path)
+            energies = calibrate_channels_to_energy(channels)
+            plt.plot(energies, scaled_counts, label=f"Spectrum: {file_name}", alpha=0.45)
+	    sigma = params[2]
+            fwhm = 2.355 * sigma
+            # Fit Gaussian and overlay
+            params, fit_energies, _ = fit_gaussian_to_spectrum(file_path, fit_range)
+            fit_counts = gaussian(fit_energies, *params)
+	    plt.plot(
+		    fit_energies, fit_counts, linestyle='--', 
+		    label=f"Fit: {file_name}\nCenter={params[1]:.2f} keV\nFWHM={fwhm:.2f} keV", 
+		    alpha=1
+		)
+           # plt.plot(fit_energies, fit_counts, linestyle='--', label=f"Fit: {file_name}\nCenter={params[1]:.2f} keV", alpha=1)
+>>>>>>> 8e074dc043bba8da33d3deb89a840fade81fb536
 
         except Exception as e:
             print(f"Error processing {file_name}: {e}")
