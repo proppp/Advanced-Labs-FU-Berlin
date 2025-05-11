@@ -1,0 +1,57 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+from scipy.interpolate import interp1d
+
+# Load PLE data (background-subtracted if needed)
+df_ple = pd.read_csv('PLEMapOfTheMolecule.csv')
+excitation = df_ple.iloc[:, 0].values  # Y-axis (excitation wavelengths)
+emission = df_ple.columns[1:].astype(int)  # X-axis (emission wavelengths)
+intensity_ple = df_ple.iloc[:, 1:].values  # PLE intensity matrix
+
+# Load lamp calibration data (skip header rows if needed)
+df_calib = pd.read_csv('calib.csv', sep=';', skiprows=2, names=['Wavelength', 'Counts'])
+lamp_wavelengths = df_calib['Wavelength'].values
+lamp_intensity = df_calib['Counts'].values
+
+# Interpolate lamp spectrum to match PLE emission wavelengths
+lamp_interp = interp1d(
+    lamp_wavelengths,
+    lamp_intensity,
+    kind='linear',
+    bounds_error=False,
+    fill_value=np.nan
+)
+lamp_at_ple_emission = lamp_interp(emission)
+
+# Replace NaNs with nearest value (if calibration doesn't cover full PLE range)
+valid_mask = ~np.isnan(lamp_at_ple_emission)
+if not np.all(valid_mask):
+    print("Warning: Lamp calibration does not cover all PLE emission wavelengths. Extrapolating.")
+    lamp_at_ple_emission = np.interp(
+        emission,
+        lamp_wavelengths,
+        lamp_intensity,
+        left=lamp_intensity[0],
+        right=lamp_intensity[-1]
+    )
+
+# Normalize PLE data by lamp intensity (avoid division by zero)
+lamp_at_ple_emission[lamp_at_ple_emission == 0] = 1e-10  # Prevent division by zero
+intensity_normalized = intensity_ple / lamp_at_ple_emission[np.newaxis, :]
+
+# Plot the normalized heatmap
+plt.figure(figsize=(12, 8))
+plt.imshow(
+    intensity_normalized,
+    extent=[emission.min(), emission.max(), excitation.min(), excitation.max()],
+    aspect='auto',
+    cmap='viridis',
+    origin='lower'
+)
+plt.colorbar(label='Normalized Intensity (Counts / Lamp Counts)')
+plt.xlabel('Emission Wavelength (nm)')
+plt.ylabel('Excitation Wavelength (nm)')
+plt.title('PLE Map (Lamp Intensity Normalized)')
+plt.tight_layout()
+plt.show()
